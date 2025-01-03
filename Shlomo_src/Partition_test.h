@@ -1,0 +1,7 @@
+
+#ifndef PARTITIONS_PARTITION_TEST_H
+#define PARTITIONS_PARTITION_TEST_H
+
+void test_partition();
+
+#endif //PARTITIONS_PARTITION_TEST_H
