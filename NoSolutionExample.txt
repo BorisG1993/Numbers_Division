@@ -1,0 +1,774 @@
+n=39, k=13, S=60, p=[2^9 3^2 5 10 ], NoSolutionStrategy3
+n=39, k=13, S=60, p=[2^9 3^2 6 9 ], NoSolutionStrategy3
+n=39, k=13, S=60, p=[2^9 3^2 7 8 ], NoSolutionStrategy3
+n=45, k=15, S=69, p=[2^10 3^3 5 11 ], NoSolutionStrategy3
+n=45, k=15, S=69, p=[2^10 3^3 6 10 ], NoSolutionStrategy3
+n=45, k=15, S=69, p=[2^10 3^3 7 9 ], NoSolutionStrategy3
+n=45, k=15, S=69, p=[2^10 3^3 8^2 ], NoSolutionStrategy3
+n=51, k=17, S=78, p=[2^12 3^2 4 5 12 ], NoSolutionStrategy3
+n=51, k=17, S=78, p=[2^12 3^2 4 6 11 ], NoSolutionStrategy3
+n=51, k=17, S=78, p=[2^12 3^2 4 7 10 ], NoSolutionStrategy3
+n=51, k=17, S=78, p=[2^12 3^2 4 8 9 ], NoSolutionStrategy3
+n=51, k=17, S=78, p=[2^12 3^2 5^2 11 ], NoSolutionStrategy3
+n=51, k=17, S=78, p=[2^12 3^2 5 6 10 ], NoSolutionStrategy3
+n=51, k=17, S=78, p=[2^12 3^2 5 7 9 ], NoSolutionStrategy3
+n=51, k=17, S=78, p=[2^12 3^2 5 8^2 ], NoSolutionStrategy3
+n=51, k=17, S=78, p=[2^12 3^2 6^2 9 ], NoSolutionStrategy3
+n=51, k=17, S=78, p=[2^12 3^2 6 7 8 ], NoSolutionStrategy3
+n=51, k=17, S=78, p=[2^12 3^2 7^3 ], NoSolutionStrategy3
+n=51, k=17, S=78, p=[2^11 3^4 5 12 ], NoSolutionStrategy3
+n=51, k=17, S=78, p=[2^11 3^4 6 11 ], NoSolutionStrategy3
+n=51, k=17, S=78, p=[2^11 3^4 7 10 ], NoSolutionStrategy3
+n=51, k=17, S=78, p=[2^11 3^4 8 9 ], NoSolutionStrategy3
+n=57, k=19, S=87, p=[2^13 3^3 4 6 12 ], NoSolutionStrategy3
+n=57, k=19, S=87, p=[2^13 3^3 4 7 11 ], NoSolutionStrategy3
+n=57, k=19, S=87, p=[2^13 3^3 4 8 10 ], NoSolutionStrategy3
+n=57, k=19, S=87, p=[2^13 3^3 4 9^2 ], NoSolutionStrategy3
+n=57, k=19, S=87, p=[2^13 3^3 5^2 12 ], NoSolutionStrategy3
+n=57, k=19, S=87, p=[2^13 3^3 5 6 11 ], NoSolutionStrategy3
+n=57, k=19, S=87, p=[2^13 3^3 5 7 10 ], NoSolutionStrategy3
+n=57, k=19, S=87, p=[2^13 3^3 5 8 9 ], NoSolutionStrategy3
+n=57, k=19, S=87, p=[2^13 3^3 6^2 10 ], NoSolutionStrategy3
+n=57, k=19, S=87, p=[2^13 3^3 6 7 9 ], NoSolutionStrategy3
+n=57, k=19, S=87, p=[2^13 3^3 6 8^2 ], NoSolutionStrategy3
+n=57, k=19, S=87, p=[2^13 3^3 7^2 8 ], NoSolutionStrategy3
+n=57, k=19, S=87, p=[2^12 3^5 6 12 ], NoSolutionStrategy3
+n=57, k=19, S=87, p=[2^12 3^5 7 11 ], NoSolutionStrategy3
+n=57, k=19, S=87, p=[2^12 3^5 8 10 ], NoSolutionStrategy3
+n=57, k=19, S=87, p=[2^12 3^5 9^2 ], NoSolutionStrategy3
+n=62, k=21, S=93, p=[2^15 3^3 5^2 13 ], NoSolutionStrategy3
+n=62, k=21, S=93, p=[2^15 3^3 5 6 12 ], NoSolutionStrategy3
+n=62, k=21, S=93, p=[2^15 3^3 5 7 11 ], NoSolutionStrategy3
+n=62, k=21, S=93, p=[2^15 3^3 5 8 10 ], NoSolutionStrategy3
+n=62, k=21, S=93, p=[2^15 3^3 5 9^2 ], NoSolutionStrategy3
+n=62, k=21, S=93, p=[2^15 3^3 6^2 11 ], NoSolutionStrategy3
+n=62, k=21, S=93, p=[2^15 3^3 6 7 10 ], NoSolutionStrategy3
+n=62, k=21, S=93, p=[2^15 3^3 6 8 9 ], NoSolutionStrategy3
+n=62, k=21, S=93, p=[2^15 3^3 7^2 9 ], NoSolutionStrategy3
+n=62, k=21, S=93, p=[2^15 3^3 7 8^2 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^15 3^2 4^2 6 13 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^15 3^2 4^2 7 12 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^15 3^2 4^2 8 11 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^15 3^2 4^2 9 10 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^15 3^2 4 5^2 13 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^15 3^2 4 5 6 12 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^15 3^2 4 5 7 11 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^15 3^2 4 5 8 10 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^15 3^2 4 5 9^2 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^15 3^2 4 6^2 11 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^15 3^2 4 6 7 10 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^15 3^2 4 6 8 9 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^15 3^2 4 7^2 9 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^15 3^2 4 7 8^2 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^15 3^2 5^3 12 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^15 3^2 5^2 6 11 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^15 3^2 5^2 7 10 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^15 3^2 5^2 8 9 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^15 3^2 5 6^2 10 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^15 3^2 5 6 7 9 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^15 3^2 5 6 8^2 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^15 3^2 5 7^2 8 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^15 3^2 6^3 9 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^15 3^2 6^2 7 8 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^15 3^2 6 7^3 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^14 3^4 4 6 13 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^14 3^4 4 7 12 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^14 3^4 4 8 11 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^14 3^4 4 9 10 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^14 3^4 5^2 13 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^14 3^4 5 6 12 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^14 3^4 5 7 11 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^14 3^4 5 8 10 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^14 3^4 5 9^2 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^14 3^4 6^2 11 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^14 3^4 6 7 10 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^14 3^4 6 8 9 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^14 3^4 7^2 9 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^14 3^4 7 8^2 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^13 3^6 6 13 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^13 3^6 7 12 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^13 3^6 8 11 ], NoSolutionStrategy3
+n=63, k=21, S=96, p=[2^13 3^6 9 10 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^17 3^2 4 5 6 13 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^17 3^2 4 5 7 12 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^17 3^2 4 5 8 11 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^17 3^2 4 5 9 10 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^17 3^2 4 6^2 12 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^17 3^2 4 6 7 11 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^17 3^2 4 6 8 10 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^17 3^2 4 6 9^2 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^17 3^2 4 7^2 10 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^17 3^2 4 7 8 9 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^17 3^2 4 8^3 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^17 3^2 5^3 13 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^17 3^2 5^2 6 12 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^17 3^2 5^2 7 11 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^17 3^2 5^2 8 10 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^17 3^2 5^2 9^2 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^17 3^2 5 6^2 11 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^17 3^2 5 6 7 10 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^17 3^2 5 6 8 9 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^17 3^2 5 7^2 9 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^17 3^2 5 7 8^2 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^17 3^2 6^3 10 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^17 3^2 6^2 7 9 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^17 3^2 6^2 8^2 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^17 3^2 6 7^2 8 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^17 3^2 7^4 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^16 3^4 5 6 13 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^16 3^4 5 7 12 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^16 3^4 5 8 11 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^16 3^4 5 9 10 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^16 3^4 6^2 12 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^16 3^4 6 7 11 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^16 3^4 6 8 10 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^16 3^4 6 9^2 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^16 3^4 7^2 10 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^16 3^4 7 8 9 ], NoSolutionStrategy3
+n=68, k=23, S=102, p=[2^16 3^4 8^3 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 4^2 6 14 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 4^2 7 13 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 4^2 8 12 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 4^2 9 11 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 4^2 10^2 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 4 5^2 14 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 4 5 6 13 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 4 5 7 12 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 4 5 8 11 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 4 5 9 10 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 4 6^2 12 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 4 6 7 11 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 4 6 8 10 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 4 6 9^2 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 4 7^2 10 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 4 7 8 9 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 4 8^3 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 5^3 13 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 5^2 6 12 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 5^2 7 11 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 5^2 8 10 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 5^2 9^2 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 5 6^2 11 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 5 6 7 10 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 5 6 8 9 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 5 7^2 9 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 5 7 8^2 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 6^3 10 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 6^2 7 9 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 6^2 8^2 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 6 7^2 8 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^16 3^3 7^4 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^15 3^5 4 6 14 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^15 3^5 4 7 13 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^15 3^5 4 8 12 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^15 3^5 4 9 11 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^15 3^5 4 10^2 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^15 3^5 5^2 14 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^15 3^5 5 6 13 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^15 3^5 5 7 12 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^15 3^5 5 8 11 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^15 3^5 5 9 10 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^15 3^5 6^2 12 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^15 3^5 6 7 11 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^15 3^5 6 8 10 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^15 3^5 6 9^2 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^15 3^5 7^2 10 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^15 3^5 7 8 9 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^15 3^5 8^3 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^14 3^7 6 14 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^14 3^7 7 13 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^14 3^7 8 12 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^14 3^7 9 11 ], NoSolutionStrategy3
+n=69, k=23, S=105, p=[2^14 3^7 10^2 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^18 3^3 4 5 6 14 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^18 3^3 4 5 7 13 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^18 3^3 4 5 8 12 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^18 3^3 4 5 9 11 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^18 3^3 4 5 10^2 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^18 3^3 4 6^2 13 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^18 3^3 4 6 7 12 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^18 3^3 4 6 8 11 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^18 3^3 4 6 9 10 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^18 3^3 4 7^2 11 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^18 3^3 4 7 8 10 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^18 3^3 4 7 9^2 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^18 3^3 4 8^2 9 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^18 3^3 5^3 14 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^18 3^3 5^2 6 13 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^18 3^3 5^2 7 12 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^18 3^3 5^2 8 11 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^18 3^3 5^2 9 10 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^18 3^3 5 6^2 12 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^18 3^3 5 6 7 11 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^18 3^3 5 6 8 10 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^18 3^3 5 6 9^2 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^18 3^3 5 7^2 10 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^18 3^3 5 7 8 9 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^18 3^3 5 8^3 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^18 3^3 6^3 11 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^18 3^3 6^2 7 10 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^18 3^3 6^2 8 9 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^18 3^3 6 7^2 9 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^18 3^3 6 7 8^2 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^18 3^3 7^3 8 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^17 3^5 5 6 14 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^17 3^5 5 7 13 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^17 3^5 5 8 12 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^17 3^5 5 9 11 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^17 3^5 5 10^2 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^17 3^5 6^2 13 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^17 3^5 6 7 12 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^17 3^5 6 8 11 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^17 3^5 6 9 10 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^17 3^5 7^2 11 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^17 3^5 7 8 10 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^17 3^5 7 9^2 ], NoSolutionStrategy3
+n=74, k=25, S=111, p=[2^17 3^5 8^2 9 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 4^2 5 6 14 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 4^2 5 7 13 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 4^2 5 8 12 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 4^2 5 9 11 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 4^2 5 10^2 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 4^2 6^2 13 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 4^2 6 7 12 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 4^2 6 8 11 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 4^2 6 9 10 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 4^2 7^2 11 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 4^2 7 8 10 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 4^2 7 9^2 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 4^2 8^2 9 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 4 5^3 14 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 4 5^2 6 13 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 4 5^2 7 12 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 4 5^2 8 11 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 4 5^2 9 10 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 4 5 6^2 12 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 4 5 6 7 11 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 4 5 6 8 10 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 4 5 6 9^2 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 4 5 7^2 10 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 4 5 7 8 9 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 4 5 8^3 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 4 6^3 11 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 4 6^2 7 10 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 4 6^2 8 9 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 4 6 7^2 9 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 4 6 7 8^2 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 4 7^3 8 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 5^4 13 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 5^3 6 12 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 5^3 7 11 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 5^3 8 10 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 5^3 9^2 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 5^2 6^2 11 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 5^2 6 7 10 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 5^2 6 8 9 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 5^2 7^2 9 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 5^2 7 8^2 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 5 6^3 10 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 5 6^2 7 9 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 5 6^2 8^2 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 5 6 7^2 8 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 5 7^4 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 6^4 9 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 6^3 7 8 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^18 3^2 6^2 7^3 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^17 3^4 4 5 6 14 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^17 3^4 4 5 7 13 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^17 3^4 4 5 8 12 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^17 3^4 4 5 9 11 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^17 3^4 4 5 10^2 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^17 3^4 4 6^2 13 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^17 3^4 4 6 7 12 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^17 3^4 4 6 8 11 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^17 3^4 4 6 9 10 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^17 3^4 4 7^2 11 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^17 3^4 4 7 8 10 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^17 3^4 4 7 9^2 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^17 3^4 4 8^2 9 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^17 3^4 5^3 14 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^17 3^4 5^2 6 13 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^17 3^4 5^2 7 12 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^17 3^4 5^2 8 11 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^17 3^4 5^2 9 10 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^17 3^4 5 6^2 12 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^17 3^4 5 6 7 11 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^17 3^4 5 6 8 10 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^17 3^4 5 6 9^2 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^17 3^4 5 7^2 10 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^17 3^4 5 7 8 9 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^17 3^4 5 8^3 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^17 3^4 6^3 11 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^17 3^4 6^2 7 10 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^17 3^4 6^2 8 9 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^17 3^4 6 7^2 9 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^17 3^4 6 7 8^2 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^17 3^4 7^3 8 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^16 3^6 5 6 14 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^16 3^6 5 7 13 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^16 3^6 5 8 12 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^16 3^6 5 9 11 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^16 3^6 5 10^2 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^16 3^6 6^2 13 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^16 3^6 6 7 12 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^16 3^6 6 8 11 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^16 3^6 6 9 10 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^16 3^6 7^2 11 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^16 3^6 7 8 10 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^16 3^6 7 9^2 ], NoSolutionStrategy3
+n=75, k=25, S=114, p=[2^16 3^6 8^2 9 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4^2 5 6 15 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4^2 5 7 14 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4^2 5 8 13 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4^2 5 9 12 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4^2 5 10 11 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4^2 6^2 14 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4^2 6 7 13 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4^2 6 8 12 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4^2 6 9 11 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4^2 6 10^2 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4^2 7^2 12 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4^2 7 8 11 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4^2 7 9 10 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4^2 8^2 10 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4^2 8 9^2 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4 5^3 15 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4 5^2 6 14 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4 5^2 7 13 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4 5^2 8 12 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4 5^2 9 11 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4 5^2 10^2 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4 5 6^2 13 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4 5 6 7 12 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4 5 6 8 11 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4 5 6 9 10 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4 5 7^2 11 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4 5 7 8 10 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4 5 7 9^2 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4 5 8^2 9 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4 6^3 12 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4 6^2 7 11 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4 6^2 8 10 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4 6^2 9^2 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4 6 7^2 10 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4 6 7 8 9 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4 6 8^3 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4 7^3 9 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 4 7^2 8^2 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 5^4 14 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 5^3 6 13 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 5^3 7 12 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 5^3 8 11 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 5^3 9 10 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 5^2 6^2 12 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 5^2 6 7 11 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 5^2 6 8 10 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 5^2 6 9^2 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 5^2 7^2 10 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 5^2 7 8 9 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 5^2 8^3 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 5 6^3 11 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 5 6^2 7 10 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 5 6^2 8 9 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 5 6 7^2 9 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 5 6 7 8^2 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 5 7^3 8 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 6^4 10 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 6^3 7 9 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 6^3 8^2 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 6^2 7^2 8 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^20 3^2 6 7^4 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 4 5 6 15 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 4 5 7 14 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 4 5 8 13 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 4 5 9 12 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 4 5 10 11 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 4 6^2 14 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 4 6 7 13 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 4 6 8 12 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 4 6 9 11 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 4 6 10^2 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 4 7^2 12 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 4 7 8 11 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 4 7 9 10 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 4 8^2 10 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 4 8 9^2 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 5^3 15 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 5^2 6 14 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 5^2 7 13 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 5^2 8 12 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 5^2 9 11 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 5^2 10^2 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 5 6^2 13 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 5 6 7 12 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 5 6 8 11 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 5 6 9 10 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 5 7^2 11 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 5 7 8 10 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 5 7 9^2 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 5 8^2 9 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 6^3 12 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 6^2 7 11 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 6^2 8 10 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 6^2 9^2 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 6 7^2 10 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 6 7 8 9 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 6 8^3 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 7^3 9 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^19 3^4 7^2 8^2 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^18 3^6 5 6 15 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^18 3^6 5 7 14 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^18 3^6 5 8 13 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^18 3^6 5 9 12 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^18 3^6 5 10 11 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^18 3^6 6^2 14 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^18 3^6 6 7 13 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^18 3^6 6 8 12 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^18 3^6 6 9 11 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^18 3^6 6 10^2 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^18 3^6 7^2 12 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^18 3^6 7 8 11 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^18 3^6 7 9 10 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^18 3^6 8^2 10 ], NoSolutionStrategy3
+n=80, k=27, S=120, p=[2^18 3^6 8 9^2 ], NoSolutionStrategy3
+n=80, k=30, S=108, p=[2^26 4^2 6 14 ], NoSolutionStrategy7
+n=80, k=30, S=108, p=[2^26 4^2 7 13 ], NoSolutionStrategy7
+n=80, k=30, S=108, p=[2^26 4^2 8 12 ], NoSolutionStrategy7
+n=80, k=30, S=108, p=[2^26 4^2 9 11 ], NoSolutionStrategy7
+n=80, k=30, S=108, p=[2^26 4^2 10^2 ], NoSolutionStrategy7
+n=80, k=30, S=108, p=[2^25 3^2 4 6 14 ], NoSolutionStrategy12
+n=80, k=30, S=108, p=[2^25 3^2 4 7 13 ], NoSolutionStrategy12
+n=80, k=30, S=108, p=[2^25 3^2 4 8 12 ], NoSolutionStrategy12
+n=80, k=30, S=108, p=[2^25 3^2 4 9 11 ], NoSolutionStrategy12
+n=80, k=30, S=108, p=[2^25 3^2 4 10^2 ], NoSolutionStrategy12
+n=80, k=30, S=108, p=[2^25 4^4 14 ], NoSolutionStrategy7
+n=80, k=30, S=108, p=[2^24 3^4 6 14 ], NoSolutionStrategy12
+n=80, k=30, S=108, p=[2^24 3^4 7 13 ], NoSolutionStrategy12
+n=80, k=30, S=108, p=[2^24 3^4 8 12 ], NoSolutionStrategy12
+n=80, k=30, S=108, p=[2^24 3^4 9 11 ], NoSolutionStrategy12
+n=80, k=30, S=108, p=[2^24 3^4 10^2 ], NoSolutionStrategy12
+n=81, k=27, S=123, p=[2^19 3^3 4^2 5 6 15 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4^2 5 7 14 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4^2 5 8 13 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4^2 5 9 12 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4^2 5 10 11 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4^2 6^2 14 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4^2 6 7 13 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4^2 6 8 12 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4^2 6 9 11 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4^2 6 10^2 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4^2 7^2 12 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4^2 7 8 11 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4^2 7 9 10 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4^2 8^2 10 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4^2 8 9^2 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4 5^3 15 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4 5^2 6 14 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4 5^2 7 13 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4 5^2 8 12 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4 5^2 9 11 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4 5^2 10^2 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4 5 6^2 13 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4 5 6 7 12 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4 5 6 8 11 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4 5 6 9 10 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4 5 7^2 11 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4 5 7 8 10 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4 5 7 9^2 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4 5 8^2 9 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4 6^3 12 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4 6^2 7 11 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4 6^2 8 10 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4 6^2 9^2 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4 6 7^2 10 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4 6 7 8 9 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4 6 8^3 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4 7^3 9 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 4 7^2 8^2 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 5^4 14 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 5^3 6 13 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 5^3 7 12 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 5^3 8 11 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 5^3 9 10 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 5^2 6^2 12 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 5^2 6 7 11 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 5^2 6 8 10 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 5^2 6 9^2 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 5^2 7^2 10 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 5^2 7 8 9 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 5^2 8^3 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 5 6^3 11 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 5 6^2 7 10 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 5 6^2 8 9 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 5 6 7^2 9 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 5 6 7 8^2 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 5 7^3 8 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 6^4 10 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 6^3 7 9 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 6^3 8^2 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 6^2 7^2 8 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^19 3^3 6 7^4 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 4 5 6 15 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 4 5 7 14 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 4 5 8 13 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 4 5 9 12 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 4 5 10 11 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 4 6^2 14 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 4 6 7 13 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 4 6 8 12 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 4 6 9 11 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 4 6 10^2 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 4 7^2 12 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 4 7 8 11 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 4 7 9 10 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 4 8^2 10 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 4 8 9^2 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 5^3 15 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 5^2 6 14 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 5^2 7 13 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 5^2 8 12 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 5^2 9 11 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 5^2 10^2 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 5 6^2 13 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 5 6 7 12 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 5 6 8 11 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 5 6 9 10 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 5 7^2 11 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 5 7 8 10 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 5 7 9^2 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 5 8^2 9 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 6^3 12 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 6^2 7 11 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 6^2 8 10 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 6^2 9^2 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 6 7^2 10 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 6 7 8 9 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 6 8^3 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 7^3 9 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^18 3^5 7^2 8^2 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^17 3^7 5 6 15 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^17 3^7 5 7 14 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^17 3^7 5 8 13 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^17 3^7 5 9 12 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^17 3^7 5 10 11 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^17 3^7 6^2 14 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^17 3^7 6 7 13 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^17 3^7 6 8 12 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^17 3^7 6 9 11 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^17 3^7 6 10^2 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^17 3^7 7^2 12 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^17 3^7 7 8 11 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^17 3^7 7 9 10 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^17 3^7 8^2 10 ], NoSolutionStrategy3
+n=81, k=27, S=123, p=[2^17 3^7 8 9^2 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4^2 5 7 15 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4^2 5 8 14 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4^2 5 9 13 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4^2 5 10 12 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4^2 5 11^2 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4^2 6^2 15 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4^2 6 7 14 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4^2 6 8 13 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4^2 6 9 12 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4^2 6 10 11 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4^2 7^2 13 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4^2 7 8 12 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4^2 7 9 11 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4^2 7 10^2 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4^2 8^2 11 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4^2 8 9 10 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4^2 9^3 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4 5^2 6 15 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4 5^2 7 14 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4 5^2 8 13 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4 5^2 9 12 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4 5^2 10 11 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4 5 6^2 14 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4 5 6 7 13 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4 5 6 8 12 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4 5 6 9 11 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4 5 6 10^2 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4 5 7^2 12 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4 5 7 8 11 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4 5 7 9 10 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4 5 8^2 10 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4 5 8 9^2 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4 6^3 13 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4 6^2 7 12 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4 6^2 8 11 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4 6^2 9 10 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4 6 7^2 11 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4 6 7 8 10 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4 6 7 9^2 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4 6 8^2 9 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4 7^3 10 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4 7^2 8 9 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 4 7 8^3 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 5^4 15 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 5^3 6 14 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 5^3 7 13 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 5^3 8 12 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 5^3 9 11 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 5^3 10^2 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 5^2 6^2 13 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 5^2 6 7 12 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 5^2 6 8 11 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 5^2 6 9 10 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 5^2 7^2 11 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 5^2 7 8 10 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 5^2 7 9^2 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 5^2 8^2 9 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 5 6^3 12 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 5 6^2 7 11 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 5 6^2 8 10 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 5 6^2 9^2 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 5 6 7^2 10 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 5 6 7 8 9 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 5 6 8^3 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 5 7^3 9 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 5 7^2 8^2 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 6^4 11 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 6^3 7 10 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 6^3 8 9 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 6^2 7^2 9 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 6^2 7 8^2 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 6 7^3 8 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^21 3^3 7^5 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 4 5 7 15 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 4 5 8 14 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 4 5 9 13 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 4 5 10 12 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 4 5 11^2 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 4 6^2 15 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 4 6 7 14 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 4 6 8 13 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 4 6 9 12 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 4 6 10 11 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 4 7^2 13 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 4 7 8 12 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 4 7 9 11 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 4 7 10^2 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 4 8^2 11 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 4 8 9 10 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 4 9^3 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 5^2 6 15 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 5^2 7 14 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 5^2 8 13 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 5^2 9 12 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 5^2 10 11 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 5 6^2 14 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 5 6 7 13 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 5 6 8 12 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 5 6 9 11 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 5 6 10^2 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 5 7^2 12 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 5 7 8 11 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 5 7 9 10 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 5 8^2 10 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 5 8 9^2 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 6^3 13 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 6^2 7 12 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 6^2 8 11 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 6^2 9 10 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 6 7^2 11 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 6 7 8 10 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 6 7 9^2 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 6 8^2 9 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 7^3 10 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 7^2 8 9 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^20 3^5 7 8^3 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^19 3^7 5 7 15 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^19 3^7 5 8 14 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^19 3^7 5 9 13 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^19 3^7 5 10 12 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^19 3^7 5 11^2 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^19 3^7 6^2 15 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^19 3^7 6 7 14 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^19 3^7 6 8 13 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^19 3^7 6 9 12 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^19 3^7 6 10 11 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^19 3^7 7^2 13 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^19 3^7 7 8 12 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^19 3^7 7 9 11 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^19 3^7 7 10^2 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^19 3^7 8^2 11 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^19 3^7 8 9 10 ], NoSolutionStrategy3
+n=86, k=29, S=129, p=[2^19 3^7 9^3 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^3 5 7 15 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^3 5 8 14 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^3 5 9 13 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^3 5 10 12 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^3 5 11^2 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^3 6^2 15 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^3 6 7 14 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^3 6 8 13 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^3 6 9 12 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^3 6 10 11 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^3 7^2 13 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^3 7 8 12 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^3 7 9 11 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^3 7 10^2 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^3 8^2 11 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^3 8 9 10 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^3 9^3 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^2 5^2 6 15 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^2 5^2 7 14 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^2 5^2 8 13 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^2 5^2 9 12 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^2 5^2 10 11 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^2 5 6^2 14 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^2 5 6 7 13 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^2 5 6 8 12 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^2 5 6 9 11 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^2 5 6 10^2 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^2 5 7^2 12 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^2 5 7 8 11 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^2 5 7 9 10 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^2 5 8^2 10 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^2 5 8 9^2 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^2 6^3 13 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^2 6^2 7 12 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^2 6^2 8 11 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^2 6^2 9 10 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^2 6 7^2 11 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^2 6 7 8 10 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^2 6 7 9^2 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^2 6 8^2 9 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^2 7^3 10 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^2 7^2 8 9 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4^2 7 8^3 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4 5^4 15 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4 5^3 6 14 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4 5^3 7 13 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4 5^3 8 12 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4 5^3 9 11 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4 5^3 10^2 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4 5^2 6^2 13 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4 5^2 6 7 12 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4 5^2 6 8 11 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4 5^2 6 9 10 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4 5^2 7^2 11 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4 5^2 7 8 10 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4 5^2 7 9^2 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4 5^2 8^2 9 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4 5 6^3 12 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4 5 6^2 7 11 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4 5 6^2 8 10 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4 5 6^2 9^2 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4 5 6 7^2 10 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4 5 6 7 8 9 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4 5 6 8^3 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4 5 7^3 9 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4 5 7^2 8^2 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4 6^4 11 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4 6^3 7 10 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4 6^3 8 9 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4 6^2 7^2 9 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4 6^2 7 8^2 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4 6 7^3 8 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 4 7^5 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 5^5 14 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 5^4 6 13 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 5^4 7 12 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 5^4 8 11 ], NoSolutionStrategy3
+n=87, k=29, S=132, p=[2^21 3^2 5^4 9 10 ], NoSolutionStrategy3

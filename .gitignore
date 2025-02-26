@@ -1,0 +1,7 @@
+Makefile
+*.o
+main
+NoSolution.txt
+bin//
+obj/
+*~
