@@ -1,3 +1,4 @@
+#c++
 Makefile
 *.o
 main
@@ -5,3 +6,11 @@ NoSolution.txt
 bin//
 obj/
 *~
+
+#python
+DS/*.pyc
+DS/*.pyo
+DS/*.pyd
+DS/__pycache__/
+DS/.python-version
+DS/.venv/

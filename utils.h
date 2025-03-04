@@ -56,4 +56,15 @@ inline int random_uniform(int lb, int ub) {
     return lb + (rand() % (ub+1-lb));
 }
 
+
+struct Prefix {
+    std::vector<int> p;
+    int n;
+    int k;
+    long snk;
+};
+
+Prefix build_p_from_line(const std::string& line);
+
+
 #endif //PARTITIONS_UTILS_H
