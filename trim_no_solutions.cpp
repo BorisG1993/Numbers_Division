@@ -211,7 +211,7 @@ int TrimNoSolutions::get_index_from_criterion_2(const Partition& partition) {
         else if (num_U_elements_leq_mid >= 2)
             num_U_elements_leq_mid -= 2;
         else
-            return num2 + i;
+            return num2 + numX - i;
     }
     int current_index = num2 + numX + num_U_elements_gt_mid + num_U_elements_leq_mid; // at this index U is exhausted
     if (current_index >= k) return default_index;

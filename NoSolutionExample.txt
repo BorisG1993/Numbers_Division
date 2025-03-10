@@ -772,3 +772,4 @@ n=87, k=29, S=132, p=[2^21 3^2 5^4 6 13 ], NoSolutionStrategy3
 n=87, k=29, S=132, p=[2^21 3^2 5^4 7 12 ], NoSolutionStrategy3
 n=87, k=29, S=132, p=[2^21 3^2 5^4 8 11 ], NoSolutionStrategy3
 n=87, k=29, S=132, p=[2^21 3^2 5^4 9 10 ], NoSolutionStrategy3
+

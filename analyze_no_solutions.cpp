@@ -44,8 +44,10 @@ int AnalyzeNoSolutions::write_to_file(const std::string& filepath) {
 }
 
 
-void AnalyzeNoSolutions::make_gaps_of_twos() {
-    
+void AnalyzeNoSolutions::make_gaps_of_twos(const std::string& src_filepath, const std::string& dst_filepath) {
+        
+    read_file(src_filepath);
+
     std::vector<Prefix>::iterator it = prefixes.begin();
 
     while (it != prefixes.end()) {
@@ -54,7 +56,7 @@ void AnalyzeNoSolutions::make_gaps_of_twos() {
         gap_pow_twos.n = it->n;
         gap_pow_twos.k = it->k;
         gap_pow_twos.snk = it->snk;
-        gap_pow_twos.gap = get_pow_of_two(*it);
+        gap_pow_twos.gap = it->n - gap_pow_twos.snk/2;
         
         int max = gap_pow_twos.gap;
         int min = gap_pow_twos.gap;
@@ -64,7 +66,6 @@ void AnalyzeNoSolutions::make_gaps_of_twos() {
             if (it->n == gap_pow_twos.n && it->k == gap_pow_twos.k && it->snk == gap_pow_twos.snk) {
                 int next_pow_two = get_pow_of_two(*it);
                 if (next_pow_two < min) min = next_pow_two;
-                if (next_pow_two > max) max = next_pow_two;
                 it++;
             }
             else break;
@@ -72,6 +73,8 @@ void AnalyzeNoSolutions::make_gaps_of_twos() {
         gap_pow_twos.gap = max - min;
         gaps_pow_twos.push_back(gap_pow_twos);
     }
+
+    write_to_file(dst_filepath);
 }
 
 

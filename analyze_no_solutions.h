@@ -23,6 +23,8 @@ private:
     std::vector<Prefix> prefixes;
 
     int get_pow_of_two(const Prefix& prefix);
+    int read_file(const std::string& filepath);
+    int write_to_file(const std::string &filepath);
     
 public:
 
@@ -30,9 +32,7 @@ public:
 
     AnalyzeNoSolutions(){}
     
-    int read_file(const std::string& filepath);
-    int write_to_file(const std::string &filepath);
-    void make_gaps_of_twos();
+    void make_gaps_of_twos(const std::string& src_filepath, const std::string& dst_filepath);
 
     friend std::ostream& operator<< (std::ostream& os, const  GapPowTwos& gpt) {
         os << "n: " << gpt.n << " k: " << gpt.k << " S: " << gpt.snk << " pow2gap: " << gpt.gap;
