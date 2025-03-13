@@ -6,11 +6,11 @@ CXXFLAGS = -std=c++11 -Wall -Wextra -g
 TARGET = main
 
 # Source and object files
-SRC = main.cpp Partition.cpp trim_no_solutions.cpp analyze_no_solutions.cpp utils.cpp
+SRC = main.cpp Partition.cpp find_no_solutions.cpp utils.cpp PartitionGenerator.cpp
 OBJ = $(SRC:.cpp=.o)
 
 # Header files
-HEADERS = Partition.h trim_no_solutions.h utils.h analyze_no_solutions.h
+HEADERS = Partition.h find_no_solutions.h utils.h PartitionGenerator.h
 
 # Default rule
 all: $(TARGET)

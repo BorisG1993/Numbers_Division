@@ -5,6 +5,7 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
+#include <cassert>
 
 template<class T>
 std::ostream& operator<<(std::ostream &os, const std::vector<T>& vec) {
@@ -65,6 +66,17 @@ struct Prefix {
 };
 
 Prefix build_p_from_line(const std::string& line);
+
+
+inline int sum_arithmetic(int first_element, int step, int num_elements) {
+    int sum=0;
+    for(int i=0, elem = first_element; i<num_elements; i++, elem += step)
+        sum += elem;
+    int result = num_elements*(2*first_element+step*(num_elements-1))/2;
+    assert(result == sum);
+    return result;
+}
+
 
 
 #endif //PARTITIONS_UTILS_H

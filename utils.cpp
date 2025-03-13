@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <regex>
+#include <cassert>
 
 
 Prefix build_p_from_line(const std::string& line) {
@@ -37,7 +38,6 @@ Prefix build_p_from_line(const std::string& line) {
     
     return prefix;
 }
-
 
 
 
