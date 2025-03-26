@@ -1,10 +1,14 @@
 #include "analyze_no_solutions.h"
-#include "utils.h"
 
 #include <iostream>
 #include <string>
 #include <vector>
 #include <fstream>
+
+#include "shlomo_src/utils.h"
+
+
+
 
 int AnalyzeNoSolutions::read_file(const std::string& filepath) {
     

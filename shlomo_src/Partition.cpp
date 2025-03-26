@@ -10,7 +10,7 @@ using namespace std;
 Partition::Partition(int _n, int _k, const std::vector<int> &_p) :
         n(_n), k(_k), S(static_cast<long>(n) * (n + 1) / (2 * k)), p(_p),
         _assignment(n, -1), _part_size(k + 1), _part_sum(k + 1) {
-    cout << "n=" << n << ", k=" << k << endl;
+    //cout << "n=" << n << ", k=" << k << endl;
     assert(is_valid(n, k, p));
     _part_size[0] = n;
     _part_sum[0] = static_cast<long>(n) * (n + 1) / 2;

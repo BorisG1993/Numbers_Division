@@ -3,6 +3,12 @@
 #include <cmath>
 #include <algorithm>
 
+#include "shlomo_src/PartitionGenerator.h"
+#include "utils.h"
+
+const int MAX_COMBINATIONS = 100000;
+
+
 
 
 FindNoSolutions& FindNoSolutions::getInstance() {

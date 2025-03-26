@@ -8,9 +8,9 @@
 #include <set>
 #include <map>
 
-#include "Partition.h"
-#include "PartitionGenerator.h"
-#include "utils.h"
+#include "shlomo_src/Partition.h"
+
+
 
 
 class FindNoSolutions {

@@ -1,5 +1,6 @@
 #include "trim_no_solutions.h"
-#include "Partition.h"
+#include "shlomo_src/Partition.h"
+#include "shlomo_src/utils.h"
 #include "utils.h"
 
 #include <iostream>
@@ -168,17 +169,6 @@ int TrimNoSolutions::get_index_from_criterion_1(const Partition& partition) {
         current_element -= p[i];
     }
     return default_index;
-}
-
-
-// Shlomo src_code adopted
-inline int TrimNoSolutions::sum_arithmetic(int first_element, int step, int num_elements) {
-    int sum=0;
-    for(int i=0, elem = first_element; i<num_elements; i++, elem += step)
-        sum += elem;
-    int result = num_elements*(2*first_element+step*(num_elements-1))/2;
-    assert(result == sum);
-    return result;
 }
 
 

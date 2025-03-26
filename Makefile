@@ -6,11 +6,11 @@ CXXFLAGS = -std=c++11 -Wall -Wextra -g
 TARGET = main
 
 # Source and object files
-SRC = main.cpp Partition.cpp find_no_solutions.cpp utils.cpp PartitionGenerator.cpp
+SRC = main.cpp shlomo_src/Partition.cpp find_no_solutions.cpp utils.cpp shlomo_src/utils.cpp shlomo_src/PartitionGenerator.cpp
 OBJ = $(SRC:.cpp=.o)
 
 # Header files
-HEADERS = Partition.h find_no_solutions.h utils.h PartitionGenerator.h
+HEADERS = shlomo_src/Partition.h find_no_solutions.h utils.h shlomo_src/utils.h shlomo_src/PartitionGenerator.h
 
 # Default rule
 all: $(TARGET)
