@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <cassert>
+#include <functional>
 
 
 
@@ -29,6 +30,17 @@ inline int sum_arithmetic(int first_element, int step, int num_elements) {
 }
 
 
+inline long long binom_coeff(int n, int r) {
+
+    if (r > n - r) r = n - r;
+    
+    long long res = 1;
+    for (int i = 0; i < r; i++) {
+        res *= (n-i);
+        res /= (i+1);
+    }
+    return res;
+}
 
 
 #endif //PARTITIONS_UTILS_H

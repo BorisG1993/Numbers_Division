@@ -7,6 +7,7 @@
 #include <vector>
 #include <set>
 #include <map>
+#include <exception>
 
 #include "shlomo_src/Partition.h"
 
@@ -46,8 +47,16 @@ public:
 
     static FindNoSolutions& getInstance();
 
-    static void search_for_no_solution(std::ofstream& output_file, const int& n_begin, const int& n_end, const int& min_p, const double& nk_ratio);
+    static void search_for_no_solution(std::ofstream& output_file, const int& n_begin, const int& n_end, const int& min_p, const double& nk_ratio = 3.0);
     
+};
+
+
+class TooManyCombinations : public std::exception {
+public:
+    const char* what() const noexcept override {
+        return "too many combinations";
+    }
 };
 
 

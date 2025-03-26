@@ -7,6 +7,7 @@
 #include "utils.h"
 
 const int MAX_COMBINATIONS = 100000;
+const int MAX_THREADS = 200;
 
 
 
@@ -65,8 +66,10 @@ std::string FindNoSolutions::partition_to_string(const Partition& partition) {
 
 void FindNoSolutions::search_for_no_solution(std::ofstream& output_file, const int& n_begin, const int& n_end, const int& min_p, const double& nk_ratio) {
     
+
     long long counter_1 = 0;
     long long counter_2 = 0;
+    long long counter_3 = 0;
 
     int n = n_begin;
     while (std::fmod(n, nk_ratio) != 0 && n < n_end) n++;
@@ -81,6 +84,10 @@ void FindNoSolutions::search_for_no_solution(std::ofstream& output_file, const i
             continue;
         }
         
+        auto print = [&](const Partition& partition) {
+            std::cout << "\33[2K\r" << counter_3 << " | " << counter_2 << " | " << counter_1 << " - " <<  partition_to_string(partition) << std::flush;
+        };
+
         PartitionGenerator partition_generator(n,k,min_p);
         PartitionGeneratorIterator pgi = partition_generator.begin();
         while (pgi != partition_generator.end()) {
@@ -92,30 +99,41 @@ void FindNoSolutions::search_for_no_solution(std::ofstream& output_file, const i
 
             Partition partition(n,k,*pgi); 
             
-            std::cout << "\33[2K\r" << counter_2 << " | " << ++counter_1 << " - " <<  partition_to_string(partition) << std::flush;
+            counter_1++;
+            print(partition);
                 
             bool no_solution_from_criterions = (no_solution_from_criterion_1(partition) || no_solution_from_criterion_2(partition));
             if (! no_solution_from_criterions ) {
-                
-                    std::cout << "33[2K\r" <<  ++counter_2 << " | " << counter_1 << " - meet criteria " << partition_to_string(partition) << std::flush; 
-                    std::map<std::pair<int,int>,std::set<int>> solution = FindNoSolutions::find_solution(partition);
 
-                    if (! solution.empty()) {
-                        output_file << "Solution: " << partition_to_string(partition) << " ---> " << solution_to_string(solution) << std::endl;
-                    }
+                counter_2++;
+                print(partition);
 
-                    else {
-                        std::cout << "No solution was found!" << std::endl;
-                        std::cout << "No Solution: " <<  partition_to_string(partition) << std::endl;
-                        output_file << "No Solution: " <<  partition_to_string(partition) << std::endl;
-                        return;
-                    }
+                std::map<std::pair<int,int>,std::set<int>> solution; 
+
+                try {
+                    solution = FindNoSolutions::find_solution(partition);
+                } catch (const TooManyCombinations& e) {
+                    pgi.next();
+                    continue;
+                }
+
+                if (! solution.empty()) {
+                    counter_3 ++;
+                    output_file << "Solution: " << partition_to_string(partition) << " ---> " << solution_to_string(solution) << std::endl;
+                }
+
+                else {
+                    std::cout << std::endl << "No solution was found!" << std::endl;
+                    std::cout << "No Solution: " <<  partition_to_string(partition) << std::endl;
+                    output_file << "No Solution: " <<  partition_to_string(partition) << std::endl;
+                    return;
+                }
             }
             pgi.next();
         }
         n += nk_ratio;
     }   
-    std::cout << "done" << std::endl;
+    std::cout << std::endl << "done" << std::endl;
 }
 
 
@@ -170,10 +188,13 @@ std::map<std::pair<int,int>,std::set<int>> FindNoSolutions::find_solution(const 
 
 
 std::vector<std::set<int>> FindNoSolutions::find_size_p_combinations_to_build_s (const std::vector<int>& nums, const int& p, const int& s) {
-    
+        
+
     std::vector<std::set<int>> size_p_combinations_to_build_s;
     
     int n = nums.size();
+    if (binom_coeff(n,p) >= MAX_COMBINATIONS) throw TooManyCombinations();
+
     std::vector<int> bitmask (n,0);
     std::fill(bitmask.end() - p, bitmask.end(), 1);
     
@@ -203,9 +224,12 @@ std::vector<std::set<int>> FindNoSolutions::find_pow_of_p_independant_combinatio
     
     std::vector<std::set<int>> pow_of_p_independant_combinations_from_vec_of_sets;
 
+
     int n = vec_of_sets.size();
     if (n == 0) return pow_of_p_independant_combinations_from_vec_of_sets;
+
     size_t p_mult_pow = p * pow;
+    if (binom_coeff(n,pow) >= MAX_COMBINATIONS) throw TooManyCombinations();
 
     std::vector<int> bitmask (n,0);
     
