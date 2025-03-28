@@ -1,13 +1,11 @@
 #include "trim_no_solutions.h"
 #include "shlomo_src/Partition.h"
-#include "shlomo_src/utils.h"
 #include "utils.h"
 
 #include <iostream>
 #include <vector>
 #include <string> 
 #include <fstream>
-#include <sstream>
 
 
 
@@ -51,44 +49,8 @@ int TrimNoSolutions::write_to_file(const std::string& filepath) {
 
 
 Partition TrimNoSolutions::line_to_partition(const std::string& line) {
-    Prefix prefix = build_p_from_line(line);
+    Prefix prefix = build_prefix_from_line(line);
     return Partition(prefix.n, prefix.k, prefix.p);
-}
-
-
-std::string TrimNoSolutions::trimmed_partition_to_line(const std::vector<int>& partition_p, const int& criterion, const int& n = 0, const int& k = 0, const int& snk = 0) {
-
-    std::stringstream ss;
-    ss << "n=" << n << ", k=" << k << ", S=" << snk <<", p=[";
-
-    int p_val_counter = 1;
-    int current_p_val;
-
-    for (size_t i = 0; i <partition_p.size();) {
-
-        current_p_val = partition_p[i++];
-        ss << current_p_val;
-        
-        while (i < partition_p.size() && partition_p[i] == current_p_val) {
-            p_val_counter++;
-            i++;
-        }
-    
-        if (p_val_counter > 1) {
-            ss << "^" << p_val_counter;
-            p_val_counter = 1;
-        }
-            
-        if (i == partition_p.size()) {
-            ss << "], Criterion " << criterion;
-        }
-
-        else {
-                ss << " ";
-            }
-        }
-
-    return ss.str();
 }
 
 
@@ -138,7 +100,8 @@ int TrimNoSolutions::trim_no_solutions(const std::string& src_filepath, const st
         current_prefix = partition.p;
         current_prefix.erase(current_prefix.begin() + trim_index + 1, current_prefix.end());
         
-        trimmed.push_back(trimmed_partition_to_line(current_prefix, criterion, partition.n, partition.k, partition.S));
+        Prefix prefix = {partition.p, partition.n, partition.k, partition.S, criterion};
+        trimmed.push_back(build_line_from_prefix(prefix));
     }
 
     return (write_to_file(dst_filepath) == 1);

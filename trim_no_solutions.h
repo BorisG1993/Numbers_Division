@@ -3,6 +3,8 @@
 
 #include <vector>
 #include <string>
+
+#include "utils.h"
 class Partition;
 
 
@@ -16,7 +18,6 @@ private:
     int read_file(const std::string& filepath);
     int write_to_file(const std::string& filepath);
     Partition line_to_partition(const std::string& line);
-    std::string trimmed_partition_to_line(const std::vector<int>& partition, const int& criterion, const int& n, const int& k, const int& snk);
     bool is_prefix(const std::vector<int>& vec1, const std::vector<int>& vec2);
 
     // utils
