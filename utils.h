@@ -9,15 +9,24 @@
 
 
 
+struct Prefix;
+
+Prefix build_prefix_from_line(const std::string& line);
+std::string build_line_from_prefix(const Prefix& prefix);
+
 struct Prefix {
     std::vector<int> p;
     int n;
     int k;
     long snk;
+    int criterion;
+
+    friend std::ostream& operator<< (std::ostream& os, const  Prefix& prefix) {
+        os << build_line_from_prefix(prefix);
+        return os;
+    }
 };
 
-
-Prefix build_p_from_line(const std::string& line);
 
 
 inline int sum_arithmetic(int first_element, int step, int num_elements) {

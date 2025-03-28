@@ -22,16 +22,17 @@ int AnalyzeNoSolutions::read_file(const std::string& filepath) {
     
     std::string line;
     while (std::getline(file, line)) {
-        Prefix prefix = build_p_from_line(line);
+        Prefix prefix = build_prefix_from_line(line);
         this->prefixes.push_back(prefix);
     }   
     
-    std::cout << "Writing done" << std::endl;
+    file.close();
     return 0;
 }
 
 
-int AnalyzeNoSolutions::write_to_file(const std::string& filepath) {
+template <typename T>
+int AnalyzeNoSolutions::write_to_file(const std::string& filepath, const std::vector<T>& target) {
      
     std::ofstream file(filepath);
     if (!file) {
@@ -39,11 +40,12 @@ int AnalyzeNoSolutions::write_to_file(const std::string& filepath) {
         return 1;
     }
     
-    for (const GapPowTwos& gpt : gaps_pow_twos) {
-        file << gpt << std::endl;
+    for (const T& t : target) {
+        file << t << std::endl;
     }
     
     file.close();
+    std::cout << "Writing done" << std::endl;
     return 0;
 }
 
@@ -51,7 +53,8 @@ int AnalyzeNoSolutions::write_to_file(const std::string& filepath) {
 void AnalyzeNoSolutions::make_gaps_of_twos(const std::string& src_filepath, const std::string& dst_filepath) {
         
     read_file(src_filepath);
-
+    
+    std::vector<GapPowTwos> gaps_pow_twos;
     std::vector<Prefix>::iterator it = prefixes.begin();
 
     while (it != prefixes.end()) {
@@ -78,7 +81,7 @@ void AnalyzeNoSolutions::make_gaps_of_twos(const std::string& src_filepath, cons
         gaps_pow_twos.push_back(gap_pow_twos);
     }
 
-    write_to_file(dst_filepath);
+    write_to_file(dst_filepath, gaps_pow_twos);
 }
 
 
@@ -92,5 +95,30 @@ int AnalyzeNoSolutions::get_pow_of_two(const Prefix& prefix) {
     }
     
     return i;
+}
+
+
+
+void AnalyzeNoSolutions::filter_by_criterion(const std::string& src_filepath, const std::string& dst_filepath, const int& criterion) {
+    
+    read_file(src_filepath);
+
+    std::vector<Prefix> filtered_by_criterion_prefixes;
+    std::vector<Prefix>::iterator it = prefixes.begin();
+
+    std::string criterion_str = std::to_string(criterion);   
+
+    while (it != prefixes.end()) {
+
+        std::string it_criterion_str = std::to_string(it->criterion);
+
+        if (it_criterion_str.find(criterion_str) != std::string::npos) {
+            filtered_by_criterion_prefixes.push_back(*it);
+        }
+
+        it++;
+    }
+
+    write_to_file(dst_filepath, filtered_by_criterion_prefixes);
 }
 

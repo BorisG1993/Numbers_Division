@@ -51,7 +51,7 @@ void InitAssignmentStrategy::Print(std::ostream& os) const {
 }
 
 void InitAssignmentStrategy::whole_set_populate_assignment(Partition &part) {
-    int i = part.n, j = 0;
+   int i = part.n, j = 0;
     while (i > 0) {
         assert(j < part.k);
         if (part.part_size(j) < part.p[j])
@@ -104,3 +104,9 @@ void InitAssignmentStrategy::adaptive_populate_assignment(Partition &part) {
     }
     assert(part.is_complete());
 }
+
+
+
+    
+
+

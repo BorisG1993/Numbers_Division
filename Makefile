@@ -3,14 +3,14 @@ CXX = g++
 CXXFLAGS = -std=c++11 -Wall -Wextra -g
 
 # Output executable
-TARGET = main
+TARGET = main_test
 
 # Source and object files
-SRC = main.cpp shlomo_src/Partition.cpp find_no_solutions.cpp utils.cpp shlomo_src/utils.cpp shlomo_src/PartitionGenerator.cpp
+SRC = main_test.cpp shlomo_src/InitAssignmentStrategy.cpp shlomo_src/Partition.cpp find_no_solutions.cpp utils.cpp shlomo_src/utils.cpp shlomo_src/PartitionGenerator.cpp analyze_no_solutions.cpp
 OBJ = $(SRC:.cpp=.o)
 
 # Header files
-HEADERS = shlomo_src/Partition.h find_no_solutions.h utils.h shlomo_src/utils.h shlomo_src/PartitionGenerator.h
+HEADERS = shlomo_src/InitAssignmentStrategy.h shlomo_src/Partition.h find_no_solutions.h utils.h shlomo_src/utils.h shlomo_src/PartitionGenerator.h analyze_no_solutions.h
 
 # Default rule
 all: $(TARGET)

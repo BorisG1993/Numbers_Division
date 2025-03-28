@@ -4,6 +4,8 @@
 #include <algorithm>
 
 #include "shlomo_src/PartitionGenerator.h"
+#include "shlomo_src/InitAssignmentStrategy.h"
+
 #include "utils.h"
 
 const int MAX_COMBINATIONS = 100000;
@@ -11,11 +13,88 @@ const int MAX_THREADS = 200;
 
 
 
-
 FindNoSolutions& FindNoSolutions::getInstance() {
     static FindNoSolutions instance;
     return instance;
 }
+
+
+void FindNoSolutions::search_for_no_solution(std::ofstream& output_file, const int& n_begin, const int& n_end, const int& min_p, const double& nk_ratio) {
+
+    long long counter_1 = 0;
+    long long counter_2 = 0;
+    long long counter_3 = 0;
+    const std::string strategies = "GRD,RND,WS,RND/10,GRD";
+
+    int n = n_begin;
+    while (std::fmod(n, nk_ratio) != 0 && n < n_end) n++;
+
+    while (n < n_end) {
+
+
+        int k = n/nk_ratio;
+
+        if (! Partition::is_valid(n,k)) {
+            n += nk_ratio;
+            continue;
+        }
+
+        auto print = [&](const Partition& partition) {
+            std::cout << "\33[2K\r" << counter_3 << " | " << counter_2 << " | " << counter_1 << " - " <<  partition_to_string(partition) << std::flush;
+        };
+
+        PartitionGenerator partition_generator(n,k,min_p);
+        PartitionGeneratorIterator pgi = partition_generator.begin();
+        while (pgi != partition_generator.end()) {
+
+            if (! Partition::is_valid(n,k,*pgi)) {
+                pgi.next();
+                continue;
+            }
+
+            Partition partition(n,k,*pgi); 
+
+            counter_1++;
+            print(partition);
+
+            bool no_solution_from_criterions_or_strategies = (no_solution_from_criterion_1(partition) 
+                    || no_solution_from_criterion_2(partition)
+                    || no_solution_from_strategies(partition, strategies));
+
+            if (!no_solution_from_criterions_or_strategies) {
+
+                counter_2++;
+                print(partition);
+
+                std::map<std::pair<int,int>,std::set<int>> solution; 
+
+                try {
+                    solution = FindNoSolutions::find_solution(partition);
+                } catch (const TooManyCombinations& e) {
+                    pgi.next();
+                    continue;
+                }
+
+                if (! solution.empty()) {
+                    counter_3 ++;
+                    output_file << "Solution: " << partition_to_string(partition) << " ---> " << solution_to_string(solution) << std::endl;
+                }
+
+                else {
+                    std::cout << std::endl << "No solution was found!" << std::endl;
+                    std::cout << "No Solution: " <<  partition_to_string(partition) << std::endl;
+                    output_file << "No Solution: " <<  partition_to_string(partition) << std::endl;
+                    return;
+                }
+            }
+            pgi.next();
+        }
+        n += nk_ratio;
+    }   
+    std::cout << std::endl << "done" << std::endl;
+}
+
+
 
 
 std::string FindNoSolutions::solution_to_string (const std::map<std::pair<int, int>, std::set<int>>& solution) {
@@ -64,77 +143,6 @@ std::string FindNoSolutions::partition_to_string(const Partition& partition) {
 }
 
 
-void FindNoSolutions::search_for_no_solution(std::ofstream& output_file, const int& n_begin, const int& n_end, const int& min_p, const double& nk_ratio) {
-    
-
-    long long counter_1 = 0;
-    long long counter_2 = 0;
-    long long counter_3 = 0;
-
-    int n = n_begin;
-    while (std::fmod(n, nk_ratio) != 0 && n < n_end) n++;
-    
-    while (n < n_end) {
-        
-          
-        int k = n/nk_ratio;
-
-        if (! Partition::is_valid(n,k)) {
-            n += nk_ratio;
-            continue;
-        }
-        
-        auto print = [&](const Partition& partition) {
-            std::cout << "\33[2K\r" << counter_3 << " | " << counter_2 << " | " << counter_1 << " - " <<  partition_to_string(partition) << std::flush;
-        };
-
-        PartitionGenerator partition_generator(n,k,min_p);
-        PartitionGeneratorIterator pgi = partition_generator.begin();
-        while (pgi != partition_generator.end()) {
-            
-            if (! Partition::is_valid(n,k,*pgi)) {
-                pgi.next();
-                continue;
-            }
-
-            Partition partition(n,k,*pgi); 
-            
-            counter_1++;
-            print(partition);
-                
-            bool no_solution_from_criterions = (no_solution_from_criterion_1(partition) || no_solution_from_criterion_2(partition));
-            if (! no_solution_from_criterions ) {
-
-                counter_2++;
-                print(partition);
-
-                std::map<std::pair<int,int>,std::set<int>> solution; 
-
-                try {
-                    solution = FindNoSolutions::find_solution(partition);
-                } catch (const TooManyCombinations& e) {
-                    pgi.next();
-                    continue;
-                }
-
-                if (! solution.empty()) {
-                    counter_3 ++;
-                    output_file << "Solution: " << partition_to_string(partition) << " ---> " << solution_to_string(solution) << std::endl;
-                }
-
-                else {
-                    std::cout << std::endl << "No solution was found!" << std::endl;
-                    std::cout << "No Solution: " <<  partition_to_string(partition) << std::endl;
-                    output_file << "No Solution: " <<  partition_to_string(partition) << std::endl;
-                    return;
-                }
-            }
-            pgi.next();
-        }
-        n += nk_ratio;
-    }   
-    std::cout << std::endl << "done" << std::endl;
-}
 
 
 std::map<std::pair<int,int>,std::set<int>> FindNoSolutions::find_solution(const Partition& partition) {
@@ -323,4 +331,10 @@ bool FindNoSolutions::no_solution_from_criterion_2(const Partition &part) {
     if (current_index >= k) return false;
     int Y = p[current_index]; // width of first part after U is exhausted
     return (sum_arithmetic(lb-1,-1,Y) < S);
+}
+
+
+bool FindNoSolutions::no_solution_from_strategies(Partition& partition, const std::string& strategies) {
+    
+   return true;
 }
