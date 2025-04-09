@@ -1,3 +1,5 @@
+#include "shlomo_main.h"
+
 #include "InitAssignmentStrategy.h"
 #include "PartitionGenerator.h"
 #include "PartitionGenerator_test.h"
@@ -220,12 +222,6 @@ Partition partition_from_vec(const vector<int>& p) {
     return Partition(n,k,p);
 }
 
-struct Stats {
-    long non_slack_unsolvable = 0, solved_by_greedy = 0, unsolved_by_greedy = 0, negative_slack = 0;
-    double total_D_after_init = 0; // total part.D after solve
-    double total_swaps = 0;
-    int solution_count = 0;        // number of times init_assignment_strategy was called
-};
 
 ostream& operator<<(ostream& os, const Stats& stats) {
     os << "unsolved_by_greedy=" << stats.unsolved_by_greedy
@@ -236,12 +232,6 @@ ostream& operator<<(ostream& os, const Stats& stats) {
        << ", avg_swaps=" << stats.total_swaps/stats.solution_count;
     return os;
 }
-
-enum class SolutionType {
-    SolutionFound=0, NoSolutionTrivial=1, NoSolutionSlack=2,
-    NoSolutionStrategy0=10,
-    Unknown=100
-};
 
 static SolutionType SolutionTypeFromStrategies(int num) {
     return static_cast<SolutionType>(static_cast<int>(SolutionType::NoSolutionStrategy0) + num);
@@ -335,76 +325,76 @@ void print_result_line(const Partition& part, const Stats& stats, SolutionType s
 //    n=80, k=30, p=[2^19 3^5 4^2 5^2 8 16] -- SolutionType::NoSolution
 //    n=80, k=30, p=[2^25 3^2 5^2 14] -- SolutionType::Unknown currently but should be SolutionType::SolutionFound
 //    n=39, k=13, p=[2^8 3^3 5 9 ] -- SolutionType::SolutionFound
-int main(int argc, char **argv) {
-//    test_partition();
-//    test_partition_generator();
-    string init_assignment_strategies_str = "GRD,RND,WS,RND/10,GRD";
-    unsigned seed = time(nullptr);
-
-    while (argc > 2) {
-        if (argv[1] == string("-s"))
-            istringstream(argv[2]) >> seed;
-        else if (argv[1] == string("-i"))
-            init_assignment_strategies_str = argv[2];
-        else
-            break;
-        argc -= 2;
-        argv += 2;
-    }
-    srand(seed);
-    InitAssignmentStrategy init_assignment_strategies(init_assignment_strategies_str);
-    cout << "init_assignment_strategies = " << init_assignment_strategies << endl;
-    if (argc > 1 && argv[1] == string("-p")) {
-        vector<int> p = PartitionFromStringArray(argc-2, argv+2);
-        Partition part = partition_from_vec(p);
-        Stats stats;
-        SolutionType solution_type = handle_partition(part, stats, init_assignment_strategies);
-        print_result_line(part, stats, solution_type);
-        part.print_assignment(cout);
-        return 0;
-    } else if (argc == 3 && argv[1] == string("-f")) {
-        ifstream is(argv[2]);
-        vector<int> p;
-        Stats stats;
-        clock_t start_time = clock();
-        while (PartitionFromStream(is, p)) {
-            Partition part = partition_from_vec(p);
-            SolutionType solution_type = handle_partition(part, stats, init_assignment_strategies);
-            if (false /* solution_type > SolutionType::NoSolutionSlack */)
-                print_result_line(part, stats, solution_type);
-        }
-        cout << double(clock() - start_time) / CLOCKS_PER_SEC << " sec" << ", " << stats << endl;
-        return 0;
-    }
-    if (argc < 3 || argc > 4) {
-        cerr << "USAGE: partition [-s seed] [-i init_assignment_strategies] min_n max_n [n/k lb]\n"
-                "or     partition [-s seed] [-i init_assignment_strategies] -p 2^26 4^2 6 14\n"
-                "or     partition [-s seed] [-i init_assignment_strategies] -f partitions_file.txt" << endl;
-        exit(1);
-    }
-    int min_n=1, max_n = 75; // default
-    istringstream(argv[1]) >> min_n;
-    istringstream(argv[2]) >> max_n;
-    double a_lb = 0;
-    if (argc > 3) istringstream(argv[3]) >> a_lb;
-    for (int n = min_n; n <= max_n; n++) {
-        Stats stats;
-        clock_t start_time = clock();
-        for (int k = 2; k < n; k++) {
-	    if ((double)n/k < a_lb) continue;
-            if (Partition::is_valid(n, k)) {
-//                int S = n * (n + 1) / (2 * k);
-                int min_p = 2; // 1 + (S > n);
-                for (const auto& p : PartitionGenerator(n,k,min_p)) {
-                    Partition part(n, k, p);
-                    SolutionType solution_type = handle_partition(part, stats, init_assignment_strategies);
-                    if (solution_type > SolutionType::NoSolutionSlack)
-                        print_result_line(part, stats, solution_type);
-                }
-            }
-        }
-        cout << "n=" << n << ": " << double(clock() - start_time) / CLOCKS_PER_SEC << " sec" << ", " << stats << endl;
-        cerr << "n=" << n << ": " << double(clock() - start_time) / CLOCKS_PER_SEC << " sec" << ", " << stats << endl;
-    }
-    return 0;
-}
+//int main(int argc, char **argv) {
+////    test_partition();
+////    test_partition_generator();
+//    string init_assignment_strategies_str = "GRD,RND,WS,RND/10,GRD";
+//    unsigned seed = time(nullptr);
+//
+//    while (argc > 2) {
+//        if (argv[1] == string("-s"))
+//            istringstream(argv[2]) >> seed;
+//        else if (argv[1] == string("-i"))
+//            init_assignment_strategies_str = argv[2];
+//        else
+//            break;
+//        argc -= 2;
+//        argv += 2;
+//    }
+//    srand(seed);
+//    InitAssignmentStrategy init_assignment_strategies(init_assignment_strategies_str);
+//    cout << "init_assignment_strategies = " << init_assignment_strategies << endl;
+//    if (argc > 1 && argv[1] == string("-p")) {
+//        vector<int> p = PartitionFromStringArray(argc-2, argv+2);
+//        Partition part = partition_from_vec(p);
+//        Stats stats;
+//        SolutionType solution_type = handle_partition(part, stats, init_assignment_strategies);
+//        print_result_line(part, stats, solution_type);
+//        part.print_assignment(cout);
+//        return 0;
+//    } else if (argc == 3 && argv[1] == string("-f")) {
+//        ifstream is(argv[2]);
+//        vector<int> p;
+//        Stats stats;
+//        clock_t start_time = clock();
+//        while (PartitionFromStream(is, p)) {
+//            Partition part = partition_from_vec(p);
+//            SolutionType solution_type = handle_partition(part, stats, init_assignment_strategies);
+//            if (false /* solution_type > SolutionType::NoSolutionSlack */)
+//                print_result_line(part, stats, solution_type);
+//        }
+//        cout << double(clock() - start_time) / CLOCKS_PER_SEC << " sec" << ", " << stats << endl;
+//        return 0;
+//    }
+//    if (argc < 3 || argc > 4) {
+//        cerr << "USAGE: partition [-s seed] [-i init_assignment_strategies] min_n max_n [n/k lb]\n"
+//                "or     partition [-s seed] [-i init_assignment_strategies] -p 2^26 4^2 6 14\n"
+//                "or     partition [-s seed] [-i init_assignment_strategies] -f partitions_file.txt" << endl;
+//        exit(1);
+//    }
+//    int min_n=1, max_n = 75; // default
+//    istringstream(argv[1]) >> min_n;
+//    istringstream(argv[2]) >> max_n;
+//    double a_lb = 0;
+//    if (argc > 3) istringstream(argv[3]) >> a_lb;
+//    for (int n = min_n; n <= max_n; n++) {
+//        Stats stats;
+//        clock_t start_time = clock();
+//        for (int k = 2; k < n; k++) {
+//	    if ((double)n/k < a_lb) continue;
+//            if (Partition::is_valid(n, k)) {
+////                int S = n * (n + 1) / (2 * k);
+//                int min_p = 2; // 1 + (S > n);
+//                for (const auto& p : PartitionGenerator(n,k,min_p)) {
+//                    Partition part(n, k, p);
+//                    SolutionType solution_type = handle_partition(part, stats, init_assignment_strategies);
+//                    if (solution_type > SolutionType::NoSolutionSlack)
+//                        print_result_line(part, stats, solution_type);
+//                }
+//            }
+//        }
+//        cout << "n=" << n << ": " << double(clock() - start_time) / CLOCKS_PER_SEC << " sec" << ", " << stats << endl;
+//        cerr << "n=" << n << ": " << double(clock() - start_time) / CLOCKS_PER_SEC << " sec" << ", " << stats << endl;
+//    }
+//    return 0;
+//}

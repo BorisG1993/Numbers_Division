@@ -9,7 +9,7 @@ int main() {
     std::ofstream file(filepath);
     if (!file) std::cerr << "Error opening file: " << filepath << std::endl;
     
-    FindNoSolutions::search_for_no_solution(file, 1, 20, 2, 3); 
+    FindNoSolutions::search_for_potential_new_no_solution(file, 201, 300, 2, 3); 
     
     if (file.is_open()) file.close();
  

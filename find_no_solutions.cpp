@@ -1,15 +1,11 @@
 #include "find_no_solutions.h"
-
 #include <cmath>
-#include <algorithm>
-
 #include "shlomo_src/PartitionGenerator.h"
 #include "shlomo_src/InitAssignmentStrategy.h"
 
-#include "utils.h"
+const int MAX_TWO_POWS = 15;
+const std::string INIT_ASSIGNMENT_STRATEGIES_STR = "GRD,RND,WS,RND/10,GRD";
 
-const int MAX_COMBINATIONS = 100000;
-const int MAX_THREADS = 200;
 
 
 
@@ -19,12 +15,16 @@ FindNoSolutions& FindNoSolutions::getInstance() {
 }
 
 
-void FindNoSolutions::search_for_no_solution(std::ofstream& output_file, const int& n_begin, const int& n_end, const int& min_p, const double& nk_ratio) {
+void FindNoSolutions::search_for_potential_new_no_solution(std::ofstream& output_file, const int& n_begin, const int& n_end, const int& min_p, const double& nk_ratio) {
+   
+    int twos_pow_counter = 0;
+    int current_twos_pow = 0;
 
-    long long counter_1 = 0;
-    long long counter_2 = 0;
-    long long counter_3 = 0;
-    const std::string strategies = "GRD,RND,WS,RND/10,GRD";
+    int total_counter = 0;
+    int potential_new_no_solution_counter = 0;
+    int no_solution_slack_counter = 0;
+    int no_solution_strategies_counter = 0;
+    int solution_found_counter = 0;
 
     int n = n_begin;
     while (std::fmod(n, nk_ratio) != 0 && n < n_end) n++;
@@ -40,12 +40,25 @@ void FindNoSolutions::search_for_no_solution(std::ofstream& output_file, const i
         }
 
         auto print = [&](const Partition& partition) {
-            std::cout << "\33[2K\r" << counter_3 << " | " << counter_2 << " | " << counter_1 << " - " <<  partition_to_string(partition) << std::flush;
+            std::cout << "\33[2K\r" << "total: " << total_counter << " | " << 
+                " no sol slack: " << no_solution_slack_counter << " | " <<
+                " no sol strat: " << no_solution_strategies_counter << " | " <<
+                " sol found: " << solution_found_counter << " | " <<
+                " unknown: " << potential_new_no_solution_counter << " | " <<
+                partition_to_string(partition) << std::flush;
         };
 
         PartitionGenerator partition_generator(n,k,min_p);
         PartitionGeneratorIterator pgi = partition_generator.begin();
-        while (pgi != partition_generator.end()) {
+        current_twos_pow = count_occurences_in_vec(2,*pgi);
+
+        while (pgi != partition_generator.end() && twos_pow_counter < MAX_TWO_POWS) {
+            
+            int next_twos_pow = count_occurences_in_vec(2, *pgi);
+            if (current_twos_pow != next_twos_pow) {
+                current_twos_pow = next_twos_pow;
+                twos_pow_counter++;
+            }
 
             if (! Partition::is_valid(n,k,*pgi)) {
                 pgi.next();
@@ -53,48 +66,39 @@ void FindNoSolutions::search_for_no_solution(std::ofstream& output_file, const i
             }
 
             Partition partition(n,k,*pgi); 
+            SolutionType determined_with_known_ways = determine_with_known_ways(partition);  
+            
+            switch (determined_with_known_ways) {
 
-            counter_1++;
-            print(partition);
+                case SolutionType::Unknown:
+                    potential_new_no_solution_counter ++;
+                    output_file << "Potential New No Solution: " <<  partition_to_string(partition) << std::endl;
+                    break;
+                
+                case SolutionType::SolutionFound:
+                    solution_found_counter ++;
+                    break;
+                
+                case SolutionType::NoSolutionSlack:
+                    no_solution_slack_counter ++;
+                    break;
 
-            bool no_solution_from_criterions_or_strategies = (no_solution_from_criterion_1(partition) 
-                    || no_solution_from_criterion_2(partition)
-                    || no_solution_from_strategies(partition, strategies));
-
-            if (!no_solution_from_criterions_or_strategies) {
-
-                counter_2++;
-                print(partition);
-
-                std::map<std::pair<int,int>,std::set<int>> solution; 
-
-                try {
-                    solution = FindNoSolutions::find_solution(partition);
-                } catch (const TooManyCombinations& e) {
-                    pgi.next();
-                    continue;
-                }
-
-                if (! solution.empty()) {
-                    counter_3 ++;
-                    output_file << "Solution: " << partition_to_string(partition) << " ---> " << solution_to_string(solution) << std::endl;
-                }
-
-                else {
-                    std::cout << std::endl << "No solution was found!" << std::endl;
-                    std::cout << "No Solution: " <<  partition_to_string(partition) << std::endl;
-                    output_file << "No Solution: " <<  partition_to_string(partition) << std::endl;
-                    return;
-                }
+                default:
+                    no_solution_strategies_counter ++;
+                    break;
             }
+
+            total_counter++;
+            print(partition);
             pgi.next();
         }
+
+        twos_pow_counter = 0;
         n += nk_ratio;
     }   
+
     std::cout << std::endl << "done" << std::endl;
 }
-
-
 
 
 std::string FindNoSolutions::solution_to_string (const std::map<std::pair<int, int>, std::set<int>>& solution) {
@@ -201,7 +205,6 @@ std::vector<std::set<int>> FindNoSolutions::find_size_p_combinations_to_build_s 
     std::vector<std::set<int>> size_p_combinations_to_build_s;
     
     int n = nums.size();
-    if (binom_coeff(n,p) >= MAX_COMBINATIONS) throw TooManyCombinations();
 
     std::vector<int> bitmask (n,0);
     std::fill(bitmask.end() - p, bitmask.end(), 1);
@@ -237,7 +240,6 @@ std::vector<std::set<int>> FindNoSolutions::find_pow_of_p_independant_combinatio
     if (n == 0) return pow_of_p_independant_combinations_from_vec_of_sets;
 
     size_t p_mult_pow = p * pow;
-    if (binom_coeff(n,pow) >= MAX_COMBINATIONS) throw TooManyCombinations();
 
     std::vector<int> bitmask (n,0);
     
@@ -264,77 +266,18 @@ std::vector<std::set<int>> FindNoSolutions::find_pow_of_p_independant_combinatio
 }
 
 
-// from Shlomo src code
-bool FindNoSolutions::no_solution_from_criterion_1(const Partition &part) {
-
-    part.assert_valid();
-    int n = part.n, k = part.k, S = part.S;
-    const std::vector<int>& p = part.p;
-    // instead of flase
-    if (p[0] != 2 || p[k-1] == 2) return true; // Must be 2^num2 ... for num2 < k for the argument to work
-    int num2 = 0;
-    while (num2 < k && p[num2] == 2) num2++;
-    // assert(num2<k)
-    if (! (num2<k))return true;
-    int lb = S-n; // set U = {lb, ..., n} where each pair needs two U elements
-    // instead of false 
-    if (lb < 1) return true;
-    int left_after_2 = (n-lb+1) - 2*num2;  // U elements left after populating the pairs
-    //assert(left_after_2 >= 0); // otherwise slack is violated
-    if (! (left_after_2 >= 0)) return true;
-    int slack = 0; // slack using only lb-1, lb-2, ... on p[num2+left_after_2] ... p[k-1] must be >= 0
-    int current_element = lb-1;
-    for(int i=num2+left_after_2; i<k; i++) {
-        slack += p[i]*(current_element + current_element-p[i]+1)/2 - S;
-        if (slack < 0) return true;
-        current_element -= p[i];
-    }
-    return false;
-}
-
-
-// from Shlomo src code
-bool FindNoSolutions::no_solution_from_criterion_2(const Partition &part) {
-    part.assert_valid();
-    int n = part.n, k = part.k, S = part.S;
-    const std::vector<int>& p = part.p;
-    // instead of false
-    if (p[0] != 2 || p[k-1] == 2) return true; // Must be 2^num2 ... for num2 < k for the argument to work
-    int num2 = 0;
-    while (num2 < k && p[num2] == 2) num2++;
-    // assert(num2<k)
-    if (! (num2<k)) return true;
-    int lb = S-n; // set U = {lb, ..., n} where each pair needs two U elements
-    // instead of false
-    if (lb < 1) return true;
-    int left_after_2 = (n-lb+1) - 2*num2;  // U elements left after populating the pairs
-    //assert(left_after_2 >= 0); // otherwise slack is violated
-    if (! (left_after_2 >= 0)) return true;
-    // instead of false
-    if (left_after_2%2 == 0) return true; // is this condition actually needed?
-    int midU = (lb+n)/2;
-    int X = p[num2]; // the next element
-    if (midU + sum_arithmetic(lb-1,-1,X-1) >= S) return false; // argument not going to work
-    int numX = 0;
-    while (num2 + numX < k && p[num2 + numX] == X) numX++;
-    int num_U_elements_gt_mid = left_after_2/2;
-    int num_U_elements_leq_mid = (left_after_2+1)/2;
-    for(int i=numX; i>0; i--) {
-        if (num_U_elements_gt_mid > 0)
-            num_U_elements_gt_mid--;
-        else if (num_U_elements_leq_mid >= 2)
-            num_U_elements_leq_mid -= 2;
-        else
-            return true;
-    }
-    int current_index = num2 + numX + num_U_elements_gt_mid + num_U_elements_leq_mid; // at this index U is exhausted
-    if (current_index >= k) return false;
-    int Y = p[current_index]; // width of first part after U is exhausted
-    return (sum_arithmetic(lb-1,-1,Y) < S);
-}
-
-
-bool FindNoSolutions::no_solution_from_strategies(Partition& partition, const std::string& strategies) {
+SolutionType FindNoSolutions::determine_with_known_ways(Partition partition) {
     
-   return true;
+    std::string init_assignment_strategies_str = INIT_ASSIGNMENT_STRATEGIES_STR;
+    InitAssignmentStrategy init_assignment_strategies(init_assignment_strategies_str);
+
+    Stats stats;
+    SolutionType solution_type = handle_partition(partition, stats, init_assignment_strategies);
+    return solution_type;
+}
+
+
+inline int FindNoSolutions::count_occurences_in_vec(const int& num, const std::vector<int> nums) {
+    auto range = std::equal_range(nums.begin(), nums.end(), num);
+    return range.second - range.first;
 }

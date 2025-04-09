@@ -8,7 +8,9 @@
 #include <set>
 #include <map>
 #include <exception>
+#include <algorithm>
 
+#include "shlomo_src/shlomo_main.h"
 #include "shlomo_src/Partition.h"
 
 
@@ -33,23 +35,21 @@ private:
                 std::map<std::pair<int,int>,std::set<int>> solution);
 
     static std::string solution_to_string (const std::map<std::pair<int, int>, std::set<int>>& solution);
-
-
+    static inline int count_occurences_in_vec(const int& num, const std::vector<int> nums);
+    static SolutionType determine_with_known_ways(Partition partition);
+    
 public:
     
     FindNoSolutions(const FindNoSolutions&) = delete;
     FindNoSolutions& operator=(const FindNoSolutions&) = delete;
     
     static std::map<std::pair<int,int>,std::set<int>> find_solution(const Partition& partition);
-    static bool no_solution_from_criterion_1(const Partition& partition);
-    static bool no_solution_from_criterion_2(const Partition& partition);
-    static bool no_solution_from_strategies(Partition& partition, const std::string& strategies);
 
     static std::string partition_to_string(const Partition& partition);
 
     static FindNoSolutions& getInstance();
 
-    static void search_for_no_solution
+    static void search_for_potential_new_no_solution
         (std::ofstream& output_file, const int& n_begin, const int& n_end, const int& min_p, const double& nk_ratio = 3.0);
     
 };
