@@ -1,10 +1,5 @@
 #include "find_no_solutions.h"
 #include <cmath>
-#include "shlomo_src/PartitionGenerator.h"
-#include "shlomo_src/InitAssignmentStrategy.h"
-
-const int MAX_TWO_POWS = 15;
-const std::string INIT_ASSIGNMENT_STRATEGIES_STR = "GRD,RND,WS,RND/10,GRD";
 
 
 
@@ -15,87 +10,91 @@ FindNoSolutions& FindNoSolutions::getInstance() {
 }
 
 
-void FindNoSolutions::search_for_potential_new_no_solution(std::ofstream& output_file, const int& n_begin, const int& n_end, const int& min_p, const double& nk_ratio) {
+void FindNoSolutions::search_for_potential_new_no_solution(std::ofstream& output_file, const int& n_begin, const int& n_end) {
    
-    int twos_pow_counter = 0;
-    int current_twos_pow = 0;
-
-    int total_counter = 0;
+    long long total_counter = 0;
     int potential_new_no_solution_counter = 0;
-    int no_solution_slack_counter = 0;
-    int no_solution_strategies_counter = 0;
-    int solution_found_counter = 0;
+    long long no_solution_slack_counter = 0;
+    long long no_solution_strategies_counter = 0;
+    long solution_found_counter = 0;
 
     int n = n_begin;
-    while (std::fmod(n, nk_ratio) != 0 && n < n_end) n++;
-
     while (n < n_end) {
+        
+        std::vector<int> ks = get_ks_around_ratio(n, NK_RATIO, NK_RATIO_EPSILON);
 
+        for (const int& k : ks) {
+        
+            if (! Partition::is_valid(n,k)) continue;
 
-        int k = n/nk_ratio;
-
-        if (! Partition::is_valid(n,k)) {
-            n += nk_ratio;
-            continue;
-        }
-
-        auto print = [&](const Partition& partition) {
-            std::cout << "\33[2K\r" << "total: " << total_counter << " | " << 
-                " no sol slack: " << no_solution_slack_counter << " | " <<
-                " no sol strat: " << no_solution_strategies_counter << " | " <<
-                " sol found: " << solution_found_counter << " | " <<
-                " unknown: " << potential_new_no_solution_counter << " | " <<
-                partition_to_string(partition) << std::flush;
-        };
-
-        PartitionGenerator partition_generator(n,k,min_p);
-        PartitionGeneratorIterator pgi = partition_generator.begin();
-        current_twos_pow = count_occurences_in_vec(2,*pgi);
-
-        while (pgi != partition_generator.end() && twos_pow_counter < MAX_TWO_POWS) {
+            auto print = [&](const Partition& partition) {
+                std::cout << "\33[2K\r" << "total: " << total_counter << " | " << 
+                    " no sol slack: " << no_solution_slack_counter << " | " <<
+                    " no sol strat: " << no_solution_strategies_counter << " | " <<
+                    " sol found: " << solution_found_counter << " | " <<
+                    " unknown: " << potential_new_no_solution_counter << " | " <<
+                    partition_to_string(partition) << std::flush;
+            };
             
-            int next_twos_pow = count_occurences_in_vec(2, *pgi);
-            if (current_twos_pow != next_twos_pow) {
-                current_twos_pow = next_twos_pow;
-                twos_pow_counter++;
-            }
-
-            if (! Partition::is_valid(n,k,*pgi)) {
-                pgi.next();
-                continue;
-            }
-
-            Partition partition(n,k,*pgi); 
-            SolutionType determined_with_known_ways = determine_with_known_ways(partition);  
             
-            switch (determined_with_known_ways) {
+            long S = get_sum(n,k);
+            int max_pow_of_twos = get_max_pow_of_twos_to_build_sum(n, S);
+            
+            for (int i = max_pow_of_twos; i > 0 &&  i > (max_pow_of_twos - MAX_TWO_POWS); --i) {
 
-                case SolutionType::Unknown:
-                    potential_new_no_solution_counter ++;
-                    output_file << "Potential New No Solution: " <<  partition_to_string(partition) << std::endl;
-                    break;
-                
-                case SolutionType::SolutionFound:
-                    solution_found_counter ++;
-                    break;
-                
-                case SolutionType::NoSolutionSlack:
-                    no_solution_slack_counter ++;
-                    break;
+                std::vector<int> prefix(i, 2);
+                PartitionGenerator partition_generator(n-2*i,k-i,MIN_P);
+                PartitionGeneratorIterator pgi = partition_generator.begin();
+                PartitionGeneratorWrapper<int,PartitionGeneratorIterator> pgw(prefix, pgi);
 
-                default:
-                    no_solution_strategies_counter ++;
-                    break;
+                while (pgi != partition_generator.end()) {
+
+                    if (! Partition::is_valid(n,k,*pgw)) {
+                        pgi.next();
+                        ++pgw;
+                        continue;
+                    }
+
+                    Partition partition(n,k,*pgw); 
+                    SolutionType determined_with_known_ways = determine_with_known_ways(partition);  
+
+                    switch (determined_with_known_ways) {
+
+                        case SolutionType::Unknown:
+                            potential_new_no_solution_counter ++;
+                            output_file << "Potential New No Solution: " <<  partition_to_string(partition) << std::endl;
+                            break;
+
+                        case SolutionType::SolutionFound:
+                            solution_found_counter ++;
+                            break;
+
+                        case SolutionType::NoSolutionSlack:
+                            no_solution_slack_counter ++;
+                            break;
+
+                        default:
+                            no_solution_strategies_counter ++;
+                            break;
+                    }
+
+                    total_counter++;
+                    print(partition);
+                    pgi.next();
+                    ++pgw;
+                }
             }
+        }   
+        n ++;
+    }
 
-            total_counter++;
-            print(partition);
-            pgi.next();
-        }
-
-        twos_pow_counter = 0;
-        n += nk_ratio;
-    }   
+    output_file <<  std::endl << 
+                    "total: " << total_counter << " | " << 
+                    " no sol slack: " << no_solution_slack_counter << " | " <<
+                    " no sol strat: " << no_solution_strategies_counter << " | " <<
+                    " sol found: " << solution_found_counter << " | " <<
+                    " unknown: " << potential_new_no_solution_counter << 
+                    std::endl;
 
     std::cout << std::endl << "done" << std::endl;
 }
@@ -145,8 +144,6 @@ std::string FindNoSolutions::partition_to_string(const Partition& partition) {
             
     return ss.str();
 }
-
-
 
 
 std::map<std::pair<int,int>,std::set<int>> FindNoSolutions::find_solution(const Partition& partition) {
@@ -281,3 +278,18 @@ inline int FindNoSolutions::count_occurences_in_vec(const int& num, const std::v
     auto range = std::equal_range(nums.begin(), nums.end(), num);
     return range.second - range.first;
 }
+
+
+std::vector<int> FindNoSolutions::get_ks_around_ratio(const int& n, const double& ratio, const double& epsilon) {
+    
+    double dn = static_cast<double>(n);
+
+    double lower = dn / (ratio + epsilon);
+    double upper = dn / (ratio - epsilon);
+    
+    std::vector<int> ks;
+    for (int k = ceil(lower); k <= floor(upper); k++) ks.push_back(k);
+
+    return ks;
+}
+

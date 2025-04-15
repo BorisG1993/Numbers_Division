@@ -8,6 +8,7 @@ obj/
 *~
 Resources/
 main_text.cpp
+notes.txt
 
 #python
 DS/*.pyc

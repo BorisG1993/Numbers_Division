@@ -1,3 +1,6 @@
+#ifndef SHLOMO_MAIN_H
+#define SHLOMO_MAIN_H
+
 #include "Partition.h"
 #include "InitAssignmentStrategy.h"
 
@@ -20,3 +23,5 @@ struct Stats {
 
 
 SolutionType handle_partition (Partition& partition, Stats& stats, InitAssignmentStrategy& init_assignment_strategies);
+
+#endif // SHLOMO_MAIN_H

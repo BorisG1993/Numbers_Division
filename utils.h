@@ -52,4 +52,12 @@ inline long long binom_coeff(int n, int r) {
 }
 
 
+static inline int get_max_pow_of_twos_to_build_sum(const int& n, const int& S) {
+    return n - S/2;
+}
+
+static inline long get_sum(const int& n, const int& k) {
+    return (static_cast<long>(n) * (n + 1) / (2 * k));
+}
+
 #endif //PARTITIONS_UTILS_H
