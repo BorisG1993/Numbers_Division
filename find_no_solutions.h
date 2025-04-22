@@ -10,6 +10,10 @@
 #include <exception>
 #include <algorithm>
 #include <cmath>
+#include <thread>
+#include <mutex>
+#include <condition_variable>
+#include <chrono>
 
 #include "shlomo_src/shlomo_main.h"
 #include "shlomo_src/Partition.h"
@@ -18,11 +22,14 @@
 #include "partition_generator_wrapper.h"
 #include "utils.h"
 
-const int MAX_TWO_POWS = 10;
+//const int MAX_THREADS = 1000;
+const int MAX_TWO_POWS = 3;
+const int MAX_POW_OF_TWOS_OFFSET = 0;
 const std::string INIT_ASSIGNMENT_STRATEGIES_STR = "GRD,RND,WS,RND/10,GRD";
 const int NK_RATIO = 3;
-const double NK_RATIO_EPSILON = 0.5;
+const double NK_RATIO_OFFSET = 0.3;
 const int MIN_P = 3;
+const int MAX_COMBINATIONS = 100000000;
 
 
 
@@ -33,17 +40,23 @@ private:
     
     FindNoSolutions(){}
 
-    static std::vector<std::set<int>> find_size_p_combinations_to_build_s (const std::vector<int>& nums, const int& p, const int& S);
+    static void find_size_p_combinations_to_build_s 
+        (const std::vector<int>& nums, 
+        int rem_p, 
+        int rem_s, 
+        std::set<int>& path, 
+        std::vector<std::set<int>>& res,
+        int start = 0);
 
     static std::vector<std::set<int>> find_pow_of_p_independant_combinations_from_vec_of_sets
         (const std::vector<std::set<int>>& vec_of_sets, const int& p, const int& pow);
 
     static std::map<std::pair<int,int>,std::set<int>> 
-        solve(const std::map<int,int>& p_map, 
-                std::map<int,int>::const_iterator next_p, 
-                const std::vector<int>& nums, 
-                const int& S, 
-                std::map<std::pair<int,int>,std::set<int>> solution);
+    solve(const std::map<int,int>& p_map, 
+          std::map<int,int>::const_iterator next_p, 
+          const std::vector<int>& nums, 
+          const int& S, 
+          std::map<std::pair<int,int>,std::set<int>> solution);
 
     static std::string solution_to_string (const std::map<std::pair<int, int>, std::set<int>>& solution);
     static inline int count_occurences_in_vec(const int& num, const std::vector<int> nums);

@@ -1,6 +1,10 @@
 #include "find_no_solutions.h"
 #include <cmath>
 
+std::mutex out_mutex;
+std::mutex pool_mutex;
+std::condition_variable cv;
+
 
 
 
@@ -16,12 +20,12 @@ void FindNoSolutions::search_for_potential_new_no_solution(std::ofstream& output
     int potential_new_no_solution_counter = 0;
     long long no_solution_slack_counter = 0;
     long long no_solution_strategies_counter = 0;
-    long solution_found_counter = 0;
+    long long solution_found_counter = 0;
 
     int n = n_begin;
     while (n < n_end) {
         
-        std::vector<int> ks = get_ks_around_ratio(n, NK_RATIO, NK_RATIO_EPSILON);
+        std::vector<int> ks = get_ks_around_ratio(n, NK_RATIO, NK_RATIO_OFFSET);
 
         for (const int& k : ks) {
         
@@ -30,7 +34,7 @@ void FindNoSolutions::search_for_potential_new_no_solution(std::ofstream& output
             auto print = [&](const Partition& partition) {
                 std::cout << "\33[2K\r" << "total: " << total_counter << " | " << 
                     " no sol slack: " << no_solution_slack_counter << " | " <<
-                    " no sol strat: " << no_solution_strategies_counter << " | " <<
+                    " no sol strategy: " << no_solution_strategies_counter << " | " <<
                     " sol found: " << solution_found_counter << " | " <<
                     " unknown: " << potential_new_no_solution_counter << " | " <<
                     partition_to_string(partition) << std::flush;
@@ -38,7 +42,8 @@ void FindNoSolutions::search_for_potential_new_no_solution(std::ofstream& output
             
             
             long S = get_sum(n,k);
-            int max_pow_of_twos = get_max_pow_of_twos_to_build_sum(n, S);
+            int offset = MAX_POW_OF_TWOS_OFFSET;
+            int max_pow_of_twos = get_max_pow_of_twos_to_build_sum(n, S) - offset;
             
             for (int i = max_pow_of_twos; i > 0 &&  i > (max_pow_of_twos - MAX_TWO_POWS); --i) {
 
@@ -91,9 +96,10 @@ void FindNoSolutions::search_for_potential_new_no_solution(std::ofstream& output
     output_file <<  std::endl << 
                     "total: " << total_counter << " | " << 
                     " no sol slack: " << no_solution_slack_counter << " | " <<
-                    " no sol strat: " << no_solution_strategies_counter << " | " <<
+                    " no sol strategy: " << no_solution_strategies_counter << " | " <<
                     " sol found: " << solution_found_counter << " | " <<
-                    " unknown: " << potential_new_no_solution_counter << 
+                    " unknown: " << potential_new_no_solution_counter <<  " - " <<
+                    
                     std::endl;
 
     std::cout << std::endl << "done" << std::endl;
@@ -176,7 +182,9 @@ std::map<std::pair<int,int>,std::set<int>> FindNoSolutions::find_solution(const 
         else return {};
     }
 
-    std::vector<std::set<int>> combinations_to_build_p = find_size_p_combinations_to_build_s(nums, next_p->first, S);
+    std::set<int> path;
+    std::vector<std::set<int>> combinations_to_build_p;
+    find_size_p_combinations_to_build_s(nums, next_p->first, S, path, combinations_to_build_p);
 
     std::vector<std::set<int>> combinations_to_build_p_mult_pow_of_p = 
         find_pow_of_p_independant_combinations_from_vec_of_sets(combinations_to_build_p, next_p->first, next_p->second);
@@ -193,73 +201,6 @@ std::map<std::pair<int,int>,std::set<int>> FindNoSolutions::find_solution(const 
     }
 
     return {};
-}
-
-
-std::vector<std::set<int>> FindNoSolutions::find_size_p_combinations_to_build_s (const std::vector<int>& nums, const int& p, const int& s) {
-        
-
-    std::vector<std::set<int>> size_p_combinations_to_build_s;
-    
-    int n = nums.size();
-
-    std::vector<int> bitmask (n,0);
-    std::fill(bitmask.end() - p, bitmask.end(), 1);
-    
-    do {
-
-        std::set<int> combination;
-        
-        int sum = 0;
-        for (int i=0; i < n; ++i)  {
-            if (bitmask[i]) {
-                sum += nums[i];
-                if (sum > s) break;
-                combination.insert(nums[i]);
-            }
-        }
-        
-        if (sum == s) size_p_combinations_to_build_s.push_back(combination);
-
-    } while (std::next_permutation(bitmask.begin(), bitmask.end()));
-
-    return size_p_combinations_to_build_s;
-}
-
-
-std::vector<std::set<int>> FindNoSolutions::find_pow_of_p_independant_combinations_from_vec_of_sets 
-    (const std::vector<std::set<int>>& vec_of_sets, const int& p, const int& pow) {
-    
-    std::vector<std::set<int>> pow_of_p_independant_combinations_from_vec_of_sets;
-
-
-    int n = vec_of_sets.size();
-    if (n == 0) return pow_of_p_independant_combinations_from_vec_of_sets;
-
-    size_t p_mult_pow = p * pow;
-
-    std::vector<int> bitmask (n,0);
-    
-    if (pow > n) return pow_of_p_independant_combinations_from_vec_of_sets;
-    std::fill(bitmask.end() - pow, bitmask.end(), 1);
-    
-    do {
-        
-        std::set<int> combinations_union;
-
-        for (int i=0; i < n; ++i) {
-            if (bitmask[i]) {
-                for (const auto& val : vec_of_sets[i]) {
-                    combinations_union.insert(val);
-                }
-            }
-        }
-        
-        if (combinations_union.size() == p_mult_pow) pow_of_p_independant_combinations_from_vec_of_sets.push_back(combinations_union);
-
-    } while (std::next_permutation(bitmask.begin(), bitmask.end()));
-    
-    return pow_of_p_independant_combinations_from_vec_of_sets;
 }
 
 
@@ -284,12 +225,91 @@ std::vector<int> FindNoSolutions::get_ks_around_ratio(const int& n, const double
     
     double dn = static_cast<double>(n);
 
-    double lower = dn / (ratio + epsilon);
+    //double lower = dn / (ratio + epsilon);
+    double lower = dn / ratio;
     double upper = dn / (ratio - epsilon);
     
     std::vector<int> ks;
     for (int k = ceil(lower); k <= floor(upper); k++) ks.push_back(k);
 
     return ks;
+}
+
+
+void FindNoSolutions::find_size_p_combinations_to_build_s  
+        (const std::vector<int>& nums, 
+        int rem_p, 
+        int rem_s, 
+        std::set<int>& path, 
+        std::vector<std::set<int>>& res,
+        int start) {
+
+    int n = nums.size();
+    long long coeff = binom_coeff(n,rem_p);
+    if (coeff >= MAX_COMBINATIONS)  {
+        std::cout << std::endl << coeff << std::endl;
+        throw TooManyCombinations();
+    }
+        
+    if (rem_p == 0 && rem_s == 0) {
+        res.push_back(path);
+        return;
+    }
+    
+    if (rem_p == 0 || rem_s < 0) return;
+
+    for (int i = start; i < (int)nums.size(); ++i) {
+        if (nums[i] > rem_s) break;
+        if ((int)nums.size() - i < rem_p) break;
+
+        path.insert(nums[i]);
+        find_size_p_combinations_to_build_s(nums, rem_p - 1, rem_s - nums[i], path, res, i+1);
+        path.erase(nums[i]);
+
+    }
+
+    return;
+}
+
+
+std::vector<std::set<int>> FindNoSolutions::find_pow_of_p_independant_combinations_from_vec_of_sets 
+    (const std::vector<std::set<int>>& vec_of_sets, const int& p, const int& pow) {
+    
+    std::vector<std::set<int>> pow_of_p_independant_combinations_from_vec_of_sets;
+
+
+    int n = vec_of_sets.size();
+    if (n == 0) return pow_of_p_independant_combinations_from_vec_of_sets;
+
+    size_t p_mult_pow = p * pow;
+    long long coeff = (binom_coeff(n,pow));
+    if (coeff >= MAX_COMBINATIONS) {
+        std::cout << std::endl << coeff << std::endl;
+        throw TooManyCombinations();
+    }
+
+
+    std::vector<int> bitmask (n,0);
+    
+    if (pow > n) return pow_of_p_independant_combinations_from_vec_of_sets;
+    std::fill(bitmask.end() - pow, bitmask.end(), 1);
+    
+    do {
+
+        std::set<int> combinations_union;
+
+        for (int i=0; i < n; ++i) {
+            if (bitmask[i]) {
+                for (const auto& val : vec_of_sets[i]) {
+                    combinations_union.insert(val);
+                }
+            }
+        }
+        
+        if (combinations_union.size() == p_mult_pow) pow_of_p_independant_combinations_from_vec_of_sets.push_back(combinations_union);
+
+    } while (std::next_permutation(bitmask.begin(), bitmask.end()));
+    
+    return pow_of_p_independant_combinations_from_vec_of_sets;
 }
 
