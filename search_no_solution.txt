@@ -1,9 +1,2 @@
-n = 201 - 210, n to k ratio is 3 +- 0.5, max power of 2 gap = 10, stopped before finish out of ~6,000,000 combinations 3 were unknown:	
 
-Potential New No Solution: n=207, k=78, S=276, p=[ 2^68 3^2 5^5 9^2 22 ] // pow 2 gap from max = 1
-Potential New No Solution: n=207, k=78, S=276, p=[ 2^68 3^2 5^5 9 10 21 ] // pow 2 gap from max = 1
-Potential New No Solution: n=207, k=78, S=276, p=[ 2^66 3^5 5^2 7^2 10^2 16 ] // pow 2 gap from max = 3
-
-n = 210 - 220, n to k ratio is 3 +- 0.5, max power of 2 gap = 10:
-total: 17407227 |  no sol slack: 6392233 |  no sol strategy: 1290093 |  sol found: 9724901 |  unknown: 0
-
+Test run for n: 201 - 300 with ratio of: 2.55 +- 0.05

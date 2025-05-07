@@ -1,9 +1,9 @@
 #include "find_no_solutions.h"
 #include <cmath>
 
-std::mutex out_mutex;
-std::mutex pool_mutex;
-std::condition_variable cv;
+//std::mutex out_mutex;
+// std::mutex pool_mutex;
+// std::condition_variable cv;
 
 
 
@@ -15,32 +15,49 @@ FindNoSolutions& FindNoSolutions::getInstance() {
 
 
 void FindNoSolutions::search_for_potential_new_no_solution(std::ofstream& output_file, const int& n_begin, const int& n_end) {
-   
+    
+    output_file << std::endl <<  "Test run for n: " << n_begin <<  " - " << n_end << " with n to k ratio of: " << NK_RATIO << " +- " << NK_RATIO_OFFSET << std::endl;
+
     long long total_counter = 0;
     int potential_new_no_solution_counter = 0;
     long long no_solution_slack_counter = 0;
     long long no_solution_strategies_counter = 0;
     long long solution_found_counter = 0;
 
+
+    auto capture = [&]() {
+        std::stringstream ss;
+        ss << "total: " << total_counter << " | " << 
+            " no sol slack: " << no_solution_slack_counter << " | " <<
+            " no sol criteria: " << no_solution_strategies_counter << " | " <<
+            " sol found: " << solution_found_counter << " | " <<
+            " unknown: " << potential_new_no_solution_counter;
+        return ss.str();
+    };
+auto capture_partition = [&](const Partition& partition) {
+        std::stringstream ss;
+        ss << capture() << " | " <<  partition_to_string(partition);
+        return ss.str();
+    };
+
+    auto print = [&](const Partition& partition) {
+        std::cout << "\33[2K\r" << capture_partition(partition) << std::flush;
+    };
+
+    
     int n = n_begin;
     while (n < n_end) {
         
         std::vector<int> ks = get_ks_around_ratio(n, NK_RATIO, NK_RATIO_OFFSET);
 
         for (const int& k : ks) {
+
+            bool skip = false;
+            
+            std::chrono::seconds duration;
         
             if (! Partition::is_valid(n,k)) continue;
 
-            auto print = [&](const Partition& partition) {
-                std::cout << "\33[2K\r" << "total: " << total_counter << " | " << 
-                    " no sol slack: " << no_solution_slack_counter << " | " <<
-                    " no sol strategy: " << no_solution_strategies_counter << " | " <<
-                    " sol found: " << solution_found_counter << " | " <<
-                    " unknown: " << potential_new_no_solution_counter << " | " <<
-                    partition_to_string(partition) << std::flush;
-            };
-            
-            
             long S = get_sum(n,k);
             int offset = MAX_POW_OF_TWOS_OFFSET;
             int max_pow_of_twos = get_max_pow_of_twos_to_build_sum(n, S) - offset;
@@ -61,8 +78,11 @@ void FindNoSolutions::search_for_potential_new_no_solution(std::ofstream& output
                     }
 
                     Partition partition(n,k,*pgw); 
+                    auto start = std::chrono::high_resolution_clock::now();
                     SolutionType determined_with_known_ways = determine_with_known_ways(partition);  
-
+                    auto end = std::chrono::high_resolution_clock::now();
+                    duration = std::chrono::duration_cast<std::chrono::seconds>(end - start);
+                    
                     switch (determined_with_known_ways) {
 
                         case SolutionType::Unknown:
@@ -80,28 +100,26 @@ void FindNoSolutions::search_for_potential_new_no_solution(std::ofstream& output
 
                         default:
                             no_solution_strategies_counter ++;
-                            break;
                     }
 
                     total_counter++;
-                    print(partition);
+                    //print(partition);
+
+                    if (duration > std::chrono::seconds(SECONDS_LIMIT)) {
+                       output_file << "Brute force struggle: " << partition_to_string(partition) << std::endl;
+                       skip = true;
+                       break;
+                    }
+
                     pgi.next();
                     ++pgw;
                 }
+                if (skip) break;
             }
         }   
         n ++;
     }
-
-    output_file <<  std::endl << 
-                    "total: " << total_counter << " | " << 
-                    " no sol slack: " << no_solution_slack_counter << " | " <<
-                    " no sol strategy: " << no_solution_strategies_counter << " | " <<
-                    " sol found: " << solution_found_counter << " | " <<
-                    " unknown: " << potential_new_no_solution_counter <<  " - " <<
-                    
-                    std::endl;
-
+    output_file << std::endl << capture() << std::endl;
     std::cout << std::endl << "done" << std::endl;
 }
 
@@ -210,7 +228,11 @@ SolutionType FindNoSolutions::determine_with_known_ways(Partition partition) {
     InitAssignmentStrategy init_assignment_strategies(init_assignment_strategies_str);
 
     Stats stats;
-    SolutionType solution_type = handle_partition(partition, stats, init_assignment_strategies);
+    SolutionType solution_type;
+    for (int i = 0; i < BRUTE_FORCE_TRIALS; ++i) {
+        solution_type = handle_partition(partition, stats, init_assignment_strategies);
+        if (solution_type != SolutionType::Unknown) break;
+    }
     return solution_type;
 }
 
@@ -225,8 +247,7 @@ std::vector<int> FindNoSolutions::get_ks_around_ratio(const int& n, const double
     
     double dn = static_cast<double>(n);
 
-    //double lower = dn / (ratio + epsilon);
-    double lower = dn / ratio;
+    double lower = dn / (ratio + epsilon);
     double upper = dn / (ratio - epsilon);
     
     std::vector<int> ks;

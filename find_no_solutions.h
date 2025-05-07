@@ -10,9 +10,9 @@
 #include <exception>
 #include <algorithm>
 #include <cmath>
-#include <thread>
-#include <mutex>
-#include <condition_variable>
+//#include <thread>
+//#include <mutex>
+//#include <condition_variable>
 #include <chrono>
 
 #include "shlomo_src/shlomo_main.h"
@@ -23,13 +23,15 @@
 #include "utils.h"
 
 //const int MAX_THREADS = 1000;
-const int MAX_TWO_POWS = 3;
+const int MAX_TWO_POWS = 2;
 const int MAX_POW_OF_TWOS_OFFSET = 0;
 const std::string INIT_ASSIGNMENT_STRATEGIES_STR = "GRD,RND,WS,RND/10,GRD";
-const int NK_RATIO = 3;
-const double NK_RATIO_OFFSET = 0.3;
+const double NK_RATIO = 2.55;
+const double NK_RATIO_OFFSET = 0.05;
 const int MIN_P = 3;
 const int MAX_COMBINATIONS = 100000000;
+const int BRUTE_FORCE_TRIALS = 10;
+const int SECONDS_LIMIT = 1;
 
 
 
@@ -60,7 +62,6 @@ private:
 
     static std::string solution_to_string (const std::map<std::pair<int, int>, std::set<int>>& solution);
     static inline int count_occurences_in_vec(const int& num, const std::vector<int> nums);
-    static SolutionType determine_with_known_ways(Partition partition);
     static std::vector<int> get_ks_around_ratio(const int& n, const double& ratio, const double& epsilon);
     
 public:
@@ -73,6 +74,7 @@ public:
     static FindNoSolutions& getInstance();
     static void search_for_potential_new_no_solution
         (std::ofstream& output_file, const int& n_begin, const int& n_end);
+    static SolutionType determine_with_known_ways(Partition partition);
 };
 
 
