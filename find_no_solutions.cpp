@@ -16,7 +16,16 @@ FindNoSolutions& FindNoSolutions::getInstance() {
 
 void FindNoSolutions::search_for_potential_new_no_solution(std::ofstream& output_file, const int& n_begin, const int& n_end) {
     
-    output_file << std::endl <<  "Test run for n: " << n_begin <<  " - " << n_end << " with n to k ratio of: " << NK_RATIO << " +- " << NK_RATIO_OFFSET << std::endl;
+    output_file << std::endl <<  "Test run for n: "
+        << n_begin <<  " - " <<
+        n_end << " with n to k ratio of: " <<
+        NK_RATIO << " +- " <<
+        NK_RATIO_OFFSET <<
+        " with min_p after 2 = " << MIN_P <<
+        std::endl;
+    
+    int i = INIT_POW_OF_TWO;
+    int i_increment_swap = INIT_POW_OF_TWO_INCREMENT_ONE;
 
     long long total_counter = 0;
     int potential_new_no_solution_counter = 0;
@@ -34,6 +43,7 @@ void FindNoSolutions::search_for_potential_new_no_solution(std::ofstream& output
             " unknown: " << potential_new_no_solution_counter;
         return ss.str();
     };
+    
 auto capture_partition = [&](const Partition& partition) {
         std::stringstream ss;
         ss << capture() << " | " <<  partition_to_string(partition);
@@ -62,15 +72,18 @@ auto capture_partition = [&](const Partition& partition) {
             int offset = MAX_POW_OF_TWOS_OFFSET;
             int max_pow_of_twos = get_max_pow_of_twos_to_build_sum(n, S) - offset;
             
-            for (int i = max_pow_of_twos; i > 0 &&  i > (max_pow_of_twos - MAX_TWO_POWS); --i) {
+//                 for (int i = max_pow_of_twos; i > 0 &&  i > (max_pow_of_twos - MAX_TWO_POWS); --i) {
 
                 std::vector<int> prefix(i, 2);
-                PartitionGenerator partition_generator(n-2*i,k-i,MIN_P);
+                prefix.insert(prefix.end(), {4,4,5,5,5,5});
+//                 PartitionGenerator partition_generator(n-2*i,k-i,MIN_P);
+// 
+                PartitionGenerator partition_generator(n-(2*i+4*2+5*6),k-(i+8),MIN_P); 
                 PartitionGeneratorIterator pgi = partition_generator.begin();
                 PartitionGeneratorWrapper<int,PartitionGeneratorIterator> pgw(prefix, pgi);
-
+                    
                 while (pgi != partition_generator.end()) {
-
+                    
                     if (! Partition::is_valid(n,k,*pgw)) {
                         pgi.next();
                         ++pgw;
@@ -103,20 +116,26 @@ auto capture_partition = [&](const Partition& partition) {
                     }
 
                     total_counter++;
-                    //print(partition);
+                    print(partition);
 
-                    if (duration > std::chrono::seconds(SECONDS_LIMIT)) {
-                       output_file << "Brute force struggle: " << partition_to_string(partition) << std::endl;
-                       skip = true;
-                       break;
-                    }
+//                     if (duration > std::chrono::seconds(SECONDS_LIMIT) && determined_with_known_ways != SolutionType::Unknown) {
+//                        output_file << "Brute force struggle: " << partition_to_string(partition) << std::endl;
+//                        skip = true;
+//                        break;
+//                     }
 
                     pgi.next();
                     ++pgw;
                 }
-                if (skip) break;
+                
+//                 if (skip) {
+//                     i += i_increment_swap;
+//                     if (i_increment_swap == 5) i_increment_swap = 3;
+//                     else i_increment_swap = 5;
+//                     break;
+//                 }
             }
-        }   
+//         }   
         n ++;
     }
     output_file << std::endl << capture() << std::endl;

@@ -25,13 +25,17 @@
 //const int MAX_THREADS = 1000;
 const int MAX_TWO_POWS = 2;
 const int MAX_POW_OF_TWOS_OFFSET = 0;
-const std::string INIT_ASSIGNMENT_STRATEGIES_STR = "GRD,RND,WS,RND/10,GRD";
-const double NK_RATIO = 2.55;
-const double NK_RATIO_OFFSET = 0.05;
-const int MIN_P = 3;
+const std::string INIT_ASSIGNMENT_STRATEGIES_STR = "RR/10,WS/10,RND/10,GRD/10";
+const double NK_RATIO = 2.65;
+const double NK_RATIO_OFFSET = 0.06;
+const int MIN_P = 6;
 const int MAX_COMBINATIONS = 100000000;
 const int BRUTE_FORCE_TRIALS = 10;
 const int SECONDS_LIMIT = 1;
+
+const int INIT_POW_OF_TWO = 103;
+const int INIT_POW_OF_TWO_INCREMENT_ONE = 5;
+const int INIT_POW_OF_TWO_INCREMENT_TWO = 3;
 
 
 

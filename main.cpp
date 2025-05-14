@@ -5,13 +5,5 @@
 
 int main() {
     
-    std::string filepath = "/home/borisg/Projects/NumbersDivision/search_no_solution.txt";   
-    std::ofstream file(filepath);
-    if (!file) std::cerr << "Error opening file: " << filepath << std::endl;
-    
-    FindNoSolutions::search_for_no_solution(file, 201, 250, 2, 3); 
-    
-    if (file.is_open()) file.close();
- 
     return 0;
 }
