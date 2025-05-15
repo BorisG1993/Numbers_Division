@@ -9,9 +9,13 @@
 
 
 
+// general utils 
+
 struct Prefix;
 
 Prefix build_prefix_from_line(const std::string& line);
+
+
 std::string build_line_from_prefix(const Prefix& prefix);
 
 struct Prefix {
@@ -26,7 +30,6 @@ struct Prefix {
         return os;
     }
 };
-
 
 
 inline int sum_arithmetic(int first_element, int step, int num_elements) {

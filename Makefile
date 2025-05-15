@@ -1,10 +1,10 @@
 CXX = g++
 CXXFLAGS = -std=c++11 -Wall -Wextra -g
 
-TARGET = main_test
+TARGET = search_no_solution
 
 SHLOMO_DIR = shlomo_src
-SRC_FILES = main_test.cpp find_no_solutions.cpp utils.cpp
+SRC_FILES = main.cpp find_no_solutions.cpp utils.cpp
 SRC_DIR_FILES = $(wildcard $(SHLOMO_DIR)/*.cpp)
 
 SRC = $(SRC_FILES) $(SRC_DIR_FILES)

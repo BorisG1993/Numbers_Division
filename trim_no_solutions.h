@@ -8,6 +8,9 @@
 class Partition;
 
 
+
+
+// trims no solution file and leaves only prefixes at which the solution possibility breaks
 class TrimNoSolutions {
 
 private:
@@ -18,11 +21,13 @@ private:
     int read_file(const std::string& filepath);
     int write_to_file(const std::string& filepath);
     Partition line_to_partition(const std::string& line);
+
+    // checks if vec1 is a prefix of vec2
     bool is_prefix(const std::vector<int>& vec1, const std::vector<int>& vec2);
 
-    // utils
     inline int sum_arithmetic(int first_element, int step, int num_elements);
-
+    
+    // returns the index at which no solution is possible by the criteria
     int get_index_from_criterion_1(const Partition& partition);
     int get_index_from_criterion_2(const Partition& partition);
 

@@ -9,6 +9,7 @@
 #include <array>
 
 
+// takes file with no solution outputs prefixes and analyzes tendencies.
 class AnalyzeNoSolutions {
 
 private:
@@ -28,7 +29,7 @@ private:
     };
     
     std::vector<Prefix> prefixes;
-
+    
     int get_pow_of_two(const Prefix& prefix);
     int read_file(const std::string& filepath);
 
@@ -38,9 +39,18 @@ private:
 public:
 
     AnalyzeNoSolutions(){}
+
+    // analyzing functions: 
+    // ----------------------------------------------------------------------------------------------------------------------------------
     
+    // from no solutions prefixes file - calculates and writes to file the gaps between max power of 2 and min power of 2 in p for specific n, k
     void make_gaps_of_twos(const std::string& src_filepath, const std::string& dst_filepath);
+    
+    // from no solutions prefixes file - writes to file only those detected by specific criterion
     void filter_by_criterion(const std::string& src_filepath, const std::string& dst_filepath, const int& criterion);
+
+    // ---------------------------------------------------------------------------------------------------------------------------------
 };
+
 
 #endif //ANALYZE_NO_SOLUTIONS_H

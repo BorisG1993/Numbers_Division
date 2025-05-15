@@ -5,6 +5,8 @@
 #include <cassert>
 
 
+
+
 Prefix build_prefix_from_line(const std::string& line) {
         
     int n = 0, k = 0, snk = 0, criterion = 0;

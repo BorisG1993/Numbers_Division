@@ -25,7 +25,7 @@ void FindNoSolutions::search_for_potential_new_no_solution(std::ofstream& output
         std::endl;
     
     int i = INIT_POW_OF_TWO;
-    int i_increment_swap = INIT_POW_OF_TWO_INCREMENT_ONE;
+//     int i_increment_swap = INIT_POW_OF_TWO_INCREMENT_ONE;
 
     long long total_counter = 0;
     int potential_new_no_solution_counter = 0;
@@ -62,7 +62,7 @@ auto capture_partition = [&](const Partition& partition) {
 
         for (const int& k : ks) {
 
-            bool skip = false;
+//             bool skip = false;
             
             std::chrono::seconds duration;
         
@@ -70,15 +70,16 @@ auto capture_partition = [&](const Partition& partition) {
 
             long S = get_sum(n,k);
             int offset = MAX_POW_OF_TWOS_OFFSET;
-            int max_pow_of_twos = get_max_pow_of_twos_to_build_sum(n, S) - offset;
+//             int max_pow_of_twos = get_max_pow_of_twos_to_build_sum(n, S) - offset;
             
 //                 for (int i = max_pow_of_twos; i > 0 &&  i > (max_pow_of_twos - MAX_TWO_POWS); --i) {
 
-                std::vector<int> prefix(i, 2);
-                prefix.insert(prefix.end(), {4,4,5,5,5,5});
-//                 PartitionGenerator partition_generator(n-2*i,k-i,MIN_P);
-// 
-                PartitionGenerator partition_generator(n-(2*i+4*2+5*6),k-(i+8),MIN_P); 
+                std::vector<int> prefix(i, FIRST_ITEM_OF_P);
+                prefix.insert(prefix.end(), NEXT_ITEMS_OF_P.begin(), NEXT_ITEMS_OF_P.end());
+//                 PartitionGenerator partition_generator(n-FIRST_ITEM_OF_P*i,k-i,MIN_P);
+                int prefix_n = std::accumulate(prefix.begin(),prefix.end(), 0);
+
+                PartitionGenerator partition_generator(prefix_n,k-prefix.size(),MIN_P); 
                 PartitionGeneratorIterator pgi = partition_generator.begin();
                 PartitionGeneratorWrapper<int,PartitionGeneratorIterator> pgw(prefix, pgi);
                     
@@ -116,7 +117,7 @@ auto capture_partition = [&](const Partition& partition) {
                     }
 
                     total_counter++;
-                    print(partition);
+                    if (PRINT) print(partition);
 
 //                     if (duration > std::chrono::seconds(SECONDS_LIMIT) && determined_with_known_ways != SolutionType::Unknown) {
 //                        output_file << "Brute force struggle: " << partition_to_string(partition) << std::endl;
@@ -127,17 +128,18 @@ auto capture_partition = [&](const Partition& partition) {
                     pgi.next();
                     ++pgw;
                 }
-                
+ 
 //                 if (skip) {
 //                     i += i_increment_swap;
-//                     if (i_increment_swap == 5) i_increment_swap = 3;
-//                     else i_increment_swap = 5;
+//                     if (i_increment_swap == POW_OF_TWO_INCREMENT_ONE) i_increment_swap = POW_OF_TWO_INCREMENT_TWO;
+//                     else i_increment_swap = POW_OF_TWO_INCREMENT_ONE;
 //                     break;
 //                 }
             }
 //         }   
         n ++;
     }
+
     output_file << std::endl << capture() << std::endl;
     std::cout << std::endl << "done" << std::endl;
 }
@@ -191,7 +193,6 @@ std::string FindNoSolutions::partition_to_string(const Partition& partition) {
 
 std::map<std::pair<int,int>,std::set<int>> FindNoSolutions::find_solution(const Partition& partition) {
     
-    // <p,pow>
     std::map<int,int> p_map;
     for (const int& num : partition.p) {
         p_map[num]++; 

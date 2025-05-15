@@ -98,7 +98,6 @@ int AnalyzeNoSolutions::get_pow_of_two(const Prefix& prefix) {
 }
 
 
-
 void AnalyzeNoSolutions::filter_by_criterion(const std::string& src_filepath, const std::string& dst_filepath, const int& criterion) {
     
     read_file(src_filepath);

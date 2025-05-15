@@ -5,6 +5,8 @@
 
 
 
+
+// allows to run partition generator with fixed prefix
 template <typename T, typename BaseGeneratorIterator>
 class PartitionGeneratorWrapper {
 
