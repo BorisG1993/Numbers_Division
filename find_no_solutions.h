@@ -23,6 +23,7 @@
 #include "shlomo_src/InitAssignmentStrategy.h"
 #include "partition_generator_wrapper.h"
 #include "utils.h"
+#include "criteria.h"
 
 //const int MAX_THREADS = 1000;
 const int MAX_TWO_POWS = 2;

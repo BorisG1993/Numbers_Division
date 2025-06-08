@@ -10,7 +10,8 @@
 enum class SolutionType {
     SolutionFound=0, NoSolutionTrivial=1, NoSolutionSlack=2,
     NoSolutionStrategy0=10,
-    Unknown=100
+    Unknown=100,
+    Criterion_2_1 = 210
 };
 
 

@@ -32,13 +32,14 @@ void FindNoSolutions::search_for_potential_new_no_solution(std::ofstream& output
     long long no_solution_slack_counter = 0;
     long long no_solution_strategies_counter = 0;
     long long solution_found_counter = 0;
-
+    long long criterion_2_1_counter = 0;
 
     auto capture = [&]() {
         std::stringstream ss;
         ss << "total: " << total_counter << " | " << 
             " no sol slack: " << no_solution_slack_counter << " | " <<
             " no sol criteria: " << no_solution_strategies_counter << " | " <<
+            " criterion 2.1: " << criterion_2_1_counter <<
             " sol found: " << solution_found_counter << " | " <<
             " unknown: " << potential_new_no_solution_counter;
         return ss.str();
@@ -110,6 +111,10 @@ auto capture_partition = [&](const Partition& partition) {
 
                         case SolutionType::NoSolutionSlack:
                             no_solution_slack_counter ++;
+                            break;
+
+                        case SolutionType::Criterion_2_1:
+                            criterion_2_1_counter ++;
                             break;
 
                         default:
@@ -252,6 +257,7 @@ SolutionType FindNoSolutions::determine_with_known_ways(Partition partition) {
     for (int i = 0; i < BRUTE_FORCE_TRIALS; ++i) {
         solution_type = handle_partition(partition, stats, init_assignment_strategies);
         if (solution_type != SolutionType::Unknown) break;
+        if (Criteria::is_unsolvable_criteria_2_1(partition)) solution_type = SolutionType::Criterion_2_1;
     }
     return solution_type;
 }
