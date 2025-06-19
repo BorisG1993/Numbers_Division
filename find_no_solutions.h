@@ -23,7 +23,6 @@
 #include "shlomo_src/InitAssignmentStrategy.h"
 #include "partition_generator_wrapper.h"
 #include "utils.h"
-#include "criteria.h"
 
 //const int MAX_THREADS = 1000;
 const int MAX_TWO_POWS = 2;
@@ -37,7 +36,7 @@ const int BRUTE_FORCE_TRIALS = 10;
 const int SECONDS_LIMIT = 1;
 
 const int FIRST_ITEM_OF_P = 2; 
-const std::vector<int> NEXT_ITEMS_OF_P = {4,4,5,5,5,5,5,5};
+// const std::vector<int> NEXT_ITEMS_OF_P = {4,4,5,5,5,5,5,5};
 const int INIT_POW_OF_TWO = 103;
 const int INIT_POW_OF_TWO_INCREMENT_ONE = 5;
 const int INIT_POW_OF_TWO_INCREMENT_TWO = 3;

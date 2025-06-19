@@ -1,4 +1,0 @@
-Test run for n: 299 - 300 with n to k ratio of: 2.65 +- 0.06 with min_p after 2 = 4
-Potential New No Solution: n=299, k=115, S=390, p=[ 2^103 4^2 5^6 8^2 12 27 ]
-
-

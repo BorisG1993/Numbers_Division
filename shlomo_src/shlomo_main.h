@@ -3,8 +3,7 @@
 
 #include "Partition.h"
 #include "InitAssignmentStrategy.h"
-
-
+#include "/home/borisg/Projects/NumbersDivision/criteria.h"
 
 
 enum class SolutionType {

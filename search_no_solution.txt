@@ -1,0 +1,8 @@
+
+Test run for n: 299 - 325 with n to k ratio of: 2.65 +- 0.06 with min_p after 2 = 4
+
+Test run for n: 299 - 325 with n to k ratio of: 2.65 +- 0.06 with min_p after 2 = 4
+
+Test run for n: 299 - 325 with n to k ratio of: 2.65 +- 0.06 with min_p after 2 = 4
+
+Test run for n: 299 - 325 with n to k ratio of: 2.65 +- 0.06 with min_p after 2 = 4

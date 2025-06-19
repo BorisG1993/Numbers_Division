@@ -14,6 +14,17 @@
 
 using namespace std;
 
+
+inline int sum_arithmetic(int first_element, int step, int num_elements) {
+int sum=0;
+for(int i=0, elem = first_element; i<num_elements; i++, elem += step)
+    sum += elem;
+int result = num_elements*(2*first_element+step*(num_elements-1))/2;
+assert(result == sum);
+return result;
+}
+
+
 // Returns i for an (i,i+1) swap and *change which is <0, ==0, >0 for improving, neutral and bad swaps.
 int get_transposition(const Partition &part, int *change) {
     assert(part.is_complete());
@@ -169,14 +180,6 @@ bool is_unsolvable_strategy3(const Partition &part) {
 }
 #endif
 
-inline int sum_arithmetic(int first_element, int step, int num_elements) {
-    int sum=0;
-    for(int i=0, elem = first_element; i<num_elements; i++, elem += step)
-        sum += elem;
-    int result = num_elements*(2*first_element+step*(num_elements-1))/2;
-    assert(result == sum);
-    return result;
-}
 
 // True means there is no solution. False means we don't know.
 // Criterion 2 from the paper
@@ -259,6 +262,10 @@ SolutionType handle_partition(Partition &part, Stats &stats, InitAssignmentStrat
         stats.non_slack_unsolvable++;
         return SolutionTypeFromStrategies(un);
     }
+    else if (Criteria::is_unsolvable_criteria_2_1(part)) {
+        return SolutionType::Criterion_2_1;
+    }
+
     for(init_assignment_strategy.reset(); init_assignment_strategy; ++init_assignment_strategy) {
         part.clear_assignment();
         init_assignment_strategy(part);

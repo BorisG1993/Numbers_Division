@@ -39,7 +39,7 @@ void FindNoSolutions::search_for_potential_new_no_solution(std::ofstream& output
         ss << "total: " << total_counter << " | " << 
             " no sol slack: " << no_solution_slack_counter << " | " <<
             " no sol criteria: " << no_solution_strategies_counter << " | " <<
-            " criterion 2.1: " << criterion_2_1_counter <<
+            " criterion 2.1: " << criterion_2_1_counter << " | " <<
             " sol found: " << solution_found_counter << " | " <<
             " unknown: " << potential_new_no_solution_counter;
         return ss.str();
@@ -76,11 +76,11 @@ auto capture_partition = [&](const Partition& partition) {
 //                 for (int i = max_pow_of_twos; i > 0 &&  i > (max_pow_of_twos - MAX_TWO_POWS); --i) {
 
                 std::vector<int> prefix(i, FIRST_ITEM_OF_P);
-                prefix.insert(prefix.end(), NEXT_ITEMS_OF_P.begin(), NEXT_ITEMS_OF_P.end());
-//                 PartitionGenerator partition_generator(n-FIRST_ITEM_OF_P*i,k-i,MIN_P);
+//                 prefix.insert(prefix.end(), NEXT_ITEMS_OF_P.begin(), NEXT_ITEMS_OF_P.end());
+                PartitionGenerator partition_generator(n-FIRST_ITEM_OF_P*i,k-i,MIN_P);
                 int prefix_n = std::accumulate(prefix.begin(),prefix.end(), 0);
 
-                PartitionGenerator partition_generator(prefix_n,k-prefix.size(),MIN_P); 
+//                 PartitionGenerator partition_generator(prefix_n,k-prefix.size(),MIN_P); 
                 PartitionGeneratorIterator pgi = partition_generator.begin();
                 PartitionGeneratorWrapper<int,PartitionGeneratorIterator> pgw(prefix, pgi);
                     
@@ -257,8 +257,8 @@ SolutionType FindNoSolutions::determine_with_known_ways(Partition partition) {
     for (int i = 0; i < BRUTE_FORCE_TRIALS; ++i) {
         solution_type = handle_partition(partition, stats, init_assignment_strategies);
         if (solution_type != SolutionType::Unknown) break;
-        if (Criteria::is_unsolvable_criteria_2_1(partition)) solution_type = SolutionType::Criterion_2_1;
     }
+    
     return solution_type;
 }
 

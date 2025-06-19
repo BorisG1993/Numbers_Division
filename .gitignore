@@ -2,6 +2,7 @@
 Makefile
 *.o
 main
+search_no_solution
 NoSolution.txt
 bin//
 obj/

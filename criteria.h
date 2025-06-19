@@ -2,9 +2,9 @@
 #define CRITERIA_H
 
 #include "shlomo_src/Partition.h"
-#include "utils.h"
 
 
+// New criteria extensions will be here.
 class Criteria {
     
 public:
@@ -16,7 +16,7 @@ public:
 
 private:
 
-    static int cut_lb(const int& X, const int& numX, const int& lb, const Partition &part);
+    static int cut_lb(const int& nextX, int& numNextX, const int& lb, const Partition &part);
 };
 
 
